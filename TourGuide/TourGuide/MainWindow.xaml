@@ -42,7 +42,7 @@
 
         <!-- Routenkarte -->
         <Border Grid.Row="1" Grid.Column="1" Margin="10" Background="LightGray">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="[Map Placeholder]"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="[Map]"/>
         </Border>
 
         <!-- Tour Logs -->
