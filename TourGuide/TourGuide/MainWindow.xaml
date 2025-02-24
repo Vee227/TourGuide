@@ -25,8 +25,7 @@
 
         <!-- Suchleiste -->
         <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="10">
-            <TextBox Name="SearchBox" Width="200" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Search" Foreground="Gray"
-                     GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus"/>
+            <TextBox Name="SearchBox" Width="200" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Search" Foreground="Gray"/>
         </Grid>
 
         <!-- Tour-Liste -->
