@@ -53,6 +53,9 @@
                 </TabItem>
             </TabControl>
         </StackPanel>
+        
+        <!-- in lesson extra materials-->
+        
 
     </Grid>
 </Window>
