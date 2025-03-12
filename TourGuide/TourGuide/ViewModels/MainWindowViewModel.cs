@@ -10,12 +10,6 @@ namespace TourGuide.ViewModels
 {
     class MainWindowViewModel
     {
-        private void DeleteItem()
-        {
-            if (SelectedItem != null)
-                Items.Remove(SelectedItem);
-        }
 
-        public RelayCommand 
     }
 }
