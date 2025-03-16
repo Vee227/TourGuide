@@ -13,6 +13,9 @@
             <MenuItem Header="Help"/>
         </Menu>
 
+        <Button Content="View Tours" Command="{Binding ShowTourListCommand}" />
+
+
         <!-- Haupt-Grid -->
         <Grid Margin="10">
             <Grid.RowDefinitions>
@@ -40,6 +43,17 @@
                     <ListBoxItem Content="Dorfrunde"/>
                 </ListBox>
             </StackPanel>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Tour List" FontSize="24" HorizontalAlignment="Center" />
+
+                <ContentControl Grid.Row="1" Content="{Binding TourListView}"/>
+            </Grid>
 
             <!-- Routenkarte -->
             <Border Grid.Row="1" Grid.Column="1" Background="LightGray">
