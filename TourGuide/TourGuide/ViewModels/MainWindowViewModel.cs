@@ -1,30 +1,95 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls.Primitives;
+using System.ComponentModel;
 using System.Windows.Input;
 using TourGuide.Comands;
-using TourGuide.ViewModels;
+using TourGuide.Models;
 using TourGuide.Views;
-using TourGuide.Comands;
 
 namespace TourGuide.ViewModels
 {
-    class MainWindowViewModel
+    class MainWindowViewModel : INotifyPropertyChanged
     {
-        public object TourListView { get; set; }
+        private object _currentView;
+        public object CurrentView
+        {
+            get => _currentView;
+            set
+            {
+                _currentView = value;
+                OnPropertyChanged(nameof(CurrentView));
+            }
+        }
+
+        private Tour _selectedTour;
+        public Tour SelectedTour
+        {
+            get => _selectedTour;
+            set
+            {
+                if (_selectedTour != value)
+                {
+                    _selectedTour = value;
+                    OnPropertyChanged(nameof(SelectedTour));
+
+                    // Re-evaluate the CanExecute status of the ShowTourDetailCommand
+                    //(ShowTourDetailCommand as RelayCommand)?.RaiseCanExecuteChanged();
+
+                    // Show the details of the selected tour
+                    ShowTourDetails();
+                }
+            }
+        }
+
+        private TourListViewModel _tourListViewModel;
+        public TourListViewModel TourListViewModel
+        {
+            get => _tourListViewModel;
+            set
+            {
+                _tourListViewModel = value;
+                OnPropertyChanged(nameof(TourListViewModel));
+            }
+        }
+
+        public ICommand ShowTourListCommand { get; }
+        public ICommand ShowTourDetailCommand { get; }
+        public ICommand OpenAddTourViewCommand { get; }
 
         public MainWindowViewModel()
         {
-            TourListView = new TourListView();
-            CurrentView = new TourListView();
-            ShowTourListCommand = new RelayCommand(_ => CurrentView = new TourListView());
+            _tourListViewModel = new TourListViewModel();
+            CurrentView = new TourListView { DataContext = _tourListViewModel };
+
+            ShowTourListCommand = new RelayCommand(_ => CurrentView = new TourListView { DataContext = _tourListViewModel });
+            ShowTourDetailCommand = new RelayCommand(_ => ShowTourDetails(), _ => SelectedTour != null);
+            OpenAddTourViewCommand = new RelayCommand(_ => OpenAddTourView());
         }
 
-        public object CurrentView { get; set; }
-        public ICommand ShowTourListCommand { get; }
+        private void ShowTourDetails()
+        {
+            if (SelectedTour != null)
+            {
+                CurrentView = new TourDetailView { DataContext = new TourDetailViewModel(SelectedTour, _tourListViewModel) };
+            }
+        }
 
+        private void OpenAddTourView()
+        {
+            AddTourView addTourView = new AddTourView(_tourListViewModel);
+            bool? result = addTourView.ShowDialog();
+
+            // If the dialog was closed with a successful result, refresh the tour list
+            if (result == true)
+            {
+                // Notify the UI that the Tours collection has been updated
+                OnPropertyChanged(nameof(TourListViewModel));
+            }
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

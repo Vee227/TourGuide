@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\
+C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\
 TourGuide
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\App.xaml
-6-1131639032
+C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\App.xaml
+71428570535
 
-20291784079
+221963773107
 1981839832580
-Controls\TourCard.xaml;Views\MainWindow.xaml;Views\SearchView.xaml;Views\TourDetailView.xaml;Views\TourListView.xaml;Views\TourLogView.xaml;
+Controls\TourCard.xaml;Views\AddTourView.xaml;Views\MainWindow.xaml;Views\SearchView.xaml;Views\TourDetailView.xaml;Views\TourListView.xaml;Views\TourLogView.xaml;
 
 False
 

@@ -12,14 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TourGuide.Models;
 
 namespace TourGuide.Controls
 {
-    /// <summary>
-    /// Interaction logic for TourCard.xaml
-    /// </summary>
     public partial class TourCard : UserControl
     {
+        public static readonly DependencyProperty TourProperty =
+            DependencyProperty.Register("Tour", typeof(Tour), typeof(TourCard), new PropertyMetadata(null));
+
+        public Tour Tour
+        {
+            get => (Tour)GetValue(TourProperty);
+            set => SetValue(TourProperty, value);
+        }
+
         public TourCard()
         {
             InitializeComponent();

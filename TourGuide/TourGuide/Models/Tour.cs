@@ -19,12 +19,12 @@ namespace TourGuide.Models
 
         public Tour(string name, string description, string startLocation, string endLocation, string transportType, int distance)
         {
-            name = name;
-            description = description;
-            startLocation = startLocation;
-            endLocation = endLocation;
-            transporttype = transportType;
-            distance = distance;
+            this.name = name;
+            this.description = description;
+            this.startLocation = startLocation;
+            this.endLocation = endLocation;
+            this.transporttype = transportType;
+            this.distance = distance;
         }
     }
 

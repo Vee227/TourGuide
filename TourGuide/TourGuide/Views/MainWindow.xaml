@@ -5,23 +5,12 @@
        Title="Tour Planner" Height="450" Width="800">
 
     <DockPanel>
-        <!-- Menüleiste oben fixieren -->
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="File"/>
-            <MenuItem Header="Edit"/>
-            <MenuItem Header="Options"/>
-            <MenuItem Header="Help"/>
-        </Menu>
-
-        <Button Content="View Tours" Command="{Binding ShowTourListCommand}" />
-
-
         <!-- Haupt-Grid -->
         <Grid Margin="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="7*"/>
-                <RowDefinition Height="5*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
@@ -29,36 +18,24 @@
             </Grid.ColumnDefinitions>
 
             <!-- Suchleiste -->
-            <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
-                    Width="200" Height="25" VerticalAlignment="Center" 
-                    Text="Search" Foreground="Gray"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Width="200" Height="25" VerticalAlignment="Center" Text="Search" Foreground="Gray"/>
 
             <!-- Tour-Liste -->
-            <StackPanel Grid.Row="1" Grid.Column="0">
-                <TextBlock Text="Tours" FontWeight="Bold"/>
-                <ListBox>
-                    <ListBoxItem Content="Wienerwald"/>
-                    <ListBoxItem Content="Dopplerhütte"/>
-                    <ListBoxItem Content="Figlwarte"/>
-                    <ListBoxItem Content="Dorfrunde"/>
-                </ListBox>
+            <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="10">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="Tours" FontWeight="Bold"/>
+                    <Button Content="+" Command="{Binding OpenAddTourViewCommand}" Width="30" Height="30" Margin="10,0,0,0"/>
+                </StackPanel>
+                <ListBox ItemsSource="{Binding TourListViewModel.Tours}" SelectedItem="{Binding SelectedTour, Mode=TwoWay}" DisplayMemberPath="name" Width="150" Height="200"/>
             </StackPanel>
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
-                <TextBlock Text="Tour List" FontSize="24" HorizontalAlignment="Center" />
-
-                <ContentControl Grid.Row="1" Content="{Binding TourListView}"/>
-            </Grid>
-
             <!-- Routenkarte -->
-            <Border Grid.Row="1" Grid.Column="1" Background="LightGray">
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="[Map mappie map]"/>
+            <Border Grid.Row="1" Grid.Column="1" Background="LightGray" Height="200">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="[Map Placeholder]"/>
             </Border>
+
+            <!-- ContentControl to display the CurrentView -->
+            <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding CurrentView}"/>
 
             <!-- Tour Logs -->
             <TabControl Grid.Row="2" Grid.Column="1">

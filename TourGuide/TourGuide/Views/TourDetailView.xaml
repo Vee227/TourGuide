@@ -6,7 +6,50 @@
              xmlns:local="clr-namespace:TourGuide.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Tour Name (Read-Only) -->
+        <TextBlock Text="Tour Name:" Grid.Row="0" Grid.Column="0" FontWeight="Bold"/>
+        <TextBlock Text="{Binding SelectedTour.name}" Grid.Row="0" Grid.Column="1" Margin="10,0,0,0"/>
+
+        <!-- Description -->
+        <TextBlock Text="Description:" Grid.Row="1" Grid.Column="0" FontWeight="Bold"/>
+        <TextBox Text="{Binding SelectedTour.description}" Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" IsReadOnly="True"/>
+
+        <!-- Start Location -->
+        <TextBlock Text="Start Location:" Grid.Row="2" Grid.Column="0" FontWeight="Bold"/>
+        <TextBox Text="{Binding SelectedTour.startLocation}" Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" IsReadOnly="True"/>
+
+        <!-- End Location -->
+        <TextBlock Text="End Location:" Grid.Row="3" Grid.Column="0" FontWeight="Bold"/>
+        <TextBox Text="{Binding SelectedTour.endLocation}" Grid.Row="3" Grid.Column="1" Margin="10,0,0,0" IsReadOnly="True"/>
+
+        <!-- Transport Type -->
+        <TextBlock Text="Transport Type:" Grid.Row="4" Grid.Column="0" FontWeight="Bold"/>
+        <TextBox Text="{Binding SelectedTour.transporttype}" Grid.Row="4" Grid.Column="1" Margin="10,0,0,0" IsReadOnly="True"/>
+
+        <!-- Distance -->
+        <TextBlock Text="Distance:" Grid.Row="5" Grid.Column="0" FontWeight="Bold"/>
+        <TextBox Text="{Binding SelectedTour.distance}" Grid.Row="5" Grid.Column="1" Margin="10,0,0,0" IsReadOnly="True"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Modify" Command="{Binding ModifyCommand}" Width="100" Margin="10"/>
+            <Button Content="Delete" Command="{Binding DeleteCommand}" Width="100" Margin="10"/>
+        </StackPanel>
     </Grid>
 </UserControl>

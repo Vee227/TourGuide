@@ -7,20 +7,39 @@ using System.Collections.ObjectModel;
 using TourGuide.ViewModels;
 using TourGuide.Models;
 using TourGuide.Controls;
+using System.ComponentModel;
 
 namespace TourGuide.ViewModels
 {
-    public class TourListViewModel
+    public class TourListViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<TourCardViewModel> TourCards { get; set; }
+        public ObservableCollection<Tour> Tours { get; set; }
 
         public TourListViewModel()
         {
-            TourCards = new ObservableCollection<TourCardViewModel>
+            Tours = new ObservableCollection<Tour>();
+        }
+
+        public void AddTour(Tour newTour)
+        {
+            Tours.Add(newTour);
+            OnPropertyChanged(nameof(Tours));  // Notify UI of the change
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void DeleteTour(Tour tour)
+        {
+            if (tour != null)
             {
-                new TourCardViewModel(new Tour { name = "Mountain Trail", description = "A scenic mountain route", transporttype = "Bike", distance = 120 }),
-                new TourCardViewModel(new Tour { name = "Lake Loop", description = "A peaceful loop around the lake", transporttype = "Walking", distance = 45 })
-            };
+                Tours.Remove(tour);
+                OnPropertyChanged(nameof(Tours));  // Notify UI of the change
+            }
         }
     }
 }
+
