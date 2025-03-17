@@ -28,7 +28,6 @@ namespace TourGuide.Comands
             remove => CommandManager.RequerySuggested -= value;
         }
 
-        // Add this method to manually trigger the CanExecuteChanged event
         public void RaiseCanExecuteChanged()
         {
             CommandManager.InvalidateRequerySuggested();

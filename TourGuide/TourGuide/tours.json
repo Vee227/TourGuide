@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Testtour",
+    "description": "Testing",
+    "startLocation": "Teststart",
+    "endLocation": "Testend",
+    "transporttype": "Run",
+    "distance": 25
+  }
+]

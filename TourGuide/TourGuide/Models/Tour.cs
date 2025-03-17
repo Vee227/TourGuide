@@ -26,6 +26,12 @@ namespace TourGuide.Models
             this.transporttype = transportType;
             this.distance = distance;
         }
+
+        public override string ToString()
+        {
+            return name;
+        }
+
     }
 
 

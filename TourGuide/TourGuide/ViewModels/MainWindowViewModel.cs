@@ -12,9 +12,6 @@ namespace TourGuide.ViewModels
 {
     class MainWindowViewModel : INotifyPropertyChanged
     {
-        private static readonly string FilePath = Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TourGuide", "tours.json");
-
         private object _currentView;
         public object CurrentView
         {
@@ -51,7 +48,7 @@ namespace TourGuide.ViewModels
             }
         }
 
-        public ObservableCollection<Tour> Tours { get; set; }
+        public ObservableCollection<Tour> Tours => _tourListViewModel.Tours;
 
         public ICommand AddTourCommand { get; }
         public ICommand DeleteTourCommand { get; }
@@ -60,7 +57,6 @@ namespace TourGuide.ViewModels
         public MainWindowViewModel()
         {
             _tourListViewModel = new TourListViewModel();
-            Tours = _tourListViewModel.Tours;
 
             AddTourCommand = new RelayCommand(_ => OpenAddTourWindow());
             DeleteTourCommand = new RelayCommand(_ => DeleteTour(), _ => SelectedTour != null);
@@ -83,14 +79,18 @@ namespace TourGuide.ViewModels
             }
         }
 
+
         private void ModifyTour()
         {
             if (SelectedTour != null)
             {
                 _tourListViewModel.ModifySelectedTour();
+                _tourListViewModel.SaveTours();
                 OnPropertyChanged(nameof(Tours));
             }
         }
+
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)

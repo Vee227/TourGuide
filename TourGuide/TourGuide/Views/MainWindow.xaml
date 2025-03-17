@@ -57,10 +57,12 @@
                             Command="{Binding AddTourCommand}"/>
                     <Button Content="✏" Width="40" Height="40" ToolTip="Edit Tour" Margin="20,0,0,0"
                             Background="#F39C12" Foreground="White"
-                            BorderThickness="0" Cursor="Hand"/>
+                            BorderThickness="0" Cursor="Hand"
+                            Command="{Binding ModifyTourCommand}"/>
                     <Button Content="🗑" Width="40" Height="40" ToolTip="Delete Tour" Margin="20,0,0,0"
                             Background="#E74C3C" Foreground="White"
-                            BorderThickness="0" Cursor="Hand"/>
+                            BorderThickness="0" Cursor="Hand"
+                            Command="{Binding DeleteTourCommand}"/>
                 </StackPanel>
             </StackPanel>
 
@@ -85,7 +87,40 @@
                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <TabItem Header="Tour Details">
                         <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <ContentControl Content="{Binding CurrentView}" />
+                            <StackPanel DataContext="{Binding SelectedTour}" Margin="10">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Name:" Width="100" FontWeight="Bold"/>
+                                    <TextBox Text="{Binding name, Mode=TwoWay}" Width="200"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Beschreibung:" Width="100" FontWeight="Bold"/>
+                                    <TextBox Text="{Binding description, Mode=TwoWay}" Width="200"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Startpunkt:" Width="100" FontWeight="Bold"/>
+                                    <TextBox Text="{Binding startLocation, Mode=TwoWay}" Width="200"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Zielpunkt:" Width="100" FontWeight="Bold"/>
+                                    <TextBox Text="{Binding endLocation, Mode=TwoWay}" Width="200"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Transportmittel:" Width="100" FontWeight="Bold"/>
+                                    <TextBox Text="{Binding transporttype, Mode=TwoWay}" Width="200"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Distanz (km):" Width="100" FontWeight="Bold"/>
+                                    <TextBox Text="{Binding distance, Mode=TwoWay}" Width="200"/>
+                                </StackPanel>
+
+                            </StackPanel>
+                            <!--<ContentControl Content="{Binding CurrentView}" />-->
                         </ScrollViewer>
                     </TabItem>
                     <TabItem Header="Tour Logs">

@@ -18,9 +18,10 @@ namespace TourGuide.ViewModels
     public class TourListViewModel : INotifyPropertyChanged
     {
         private static readonly string FilePath = Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TourGuide", "tours.json");
+            Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName,"tours.json");
 
-        public ObservableCollection<Tour> Tours { get; set; }
+
+        public ObservableCollection<Tour> Tours { get; private set; } = new ObservableCollection<Tour>();
 
         private Tour _selectedTour;
         public Tour SelectedTour
@@ -37,7 +38,6 @@ namespace TourGuide.ViewModels
 
         public TourListViewModel()
         {
-            Tours = new ObservableCollection<Tour>();
             LoadTours();
             ModifyTourCommand = new RelayCommand(_ => ModifySelectedTour(), _ => SelectedTour != null);
         }
@@ -66,6 +66,7 @@ namespace TourGuide.ViewModels
             var existingTour = Tours.FirstOrDefault(t => t.name == SelectedTour.name);
             if (existingTour != null)
             {
+                existingTour.name = SelectedTour.name;
                 existingTour.description = SelectedTour.description;
                 existingTour.startLocation = SelectedTour.startLocation;
                 existingTour.endLocation = SelectedTour.endLocation;
@@ -74,19 +75,16 @@ namespace TourGuide.ViewModels
 
                 SaveTours();
                 OnPropertyChanged(nameof(Tours));
+                OnPropertyChanged(nameof(SelectedTour));
             }
         }
 
-        private void SaveTours()
+
+
+        public void SaveTours()
         {
             try
             {
-                var directory = Path.GetDirectoryName(FilePath);
-                if (!Directory.Exists(directory))
-                {
-                    Directory.CreateDirectory(directory);
-                }
-
                 var json = JsonSerializer.Serialize(Tours, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(FilePath, json);
             }
@@ -106,8 +104,8 @@ namespace TourGuide.ViewModels
                     var loadedTours = JsonSerializer.Deserialize<ObservableCollection<Tour>>(json);
                     if (loadedTours != null)
                     {
-                        foreach (var tour in loadedTours)
-                            Tours.Add(tour);
+                        Tours = loadedTours;
+                        OnPropertyChanged(nameof(Tours));
                     }
                 }
             }
