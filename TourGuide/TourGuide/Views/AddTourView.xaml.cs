@@ -54,7 +54,7 @@ namespace TourGuide.Views
                 };
 
                 _tourListVM.AddTour(newTour);
-                DialogResult = true; // Set dialog result to true
+                DialogResult = true; // Setzt den Dialog als erfolgreich geschlossen
                 Close();
             }
             catch (Exception ex)

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
+using System.Text.Json;
 using System.Windows.Input;
 using TourGuide.Comands;
 using TourGuide.Models;
@@ -9,6 +12,9 @@ namespace TourGuide.ViewModels
 {
     class MainWindowViewModel : INotifyPropertyChanged
     {
+        private static readonly string FilePath = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TourGuide", "tours.json");
+
         private object _currentView;
         public object CurrentView
         {
@@ -30,12 +36,6 @@ namespace TourGuide.ViewModels
                 {
                     _selectedTour = value;
                     OnPropertyChanged(nameof(SelectedTour));
-
-                    // Re-evaluate the CanExecute status of the ShowTourDetailCommand
-                    //(ShowTourDetailCommand as RelayCommand)?.RaiseCanExecuteChanged();
-
-                    // Show the details of the selected tour
-                    ShowTourDetails();
                 }
             }
         }
@@ -51,38 +51,44 @@ namespace TourGuide.ViewModels
             }
         }
 
-        public ICommand ShowTourListCommand { get; }
-        public ICommand ShowTourDetailCommand { get; }
-        public ICommand OpenAddTourViewCommand { get; }
+        public ObservableCollection<Tour> Tours { get; set; }
+
+        public ICommand AddTourCommand { get; }
+        public ICommand DeleteTourCommand { get; }
+        public ICommand ModifyTourCommand { get; }
 
         public MainWindowViewModel()
         {
             _tourListViewModel = new TourListViewModel();
-            CurrentView = new TourListView { DataContext = _tourListViewModel };
+            Tours = _tourListViewModel.Tours;
 
-            ShowTourListCommand = new RelayCommand(_ => CurrentView = new TourListView { DataContext = _tourListViewModel });
-            ShowTourDetailCommand = new RelayCommand(_ => ShowTourDetails(), _ => SelectedTour != null);
-            OpenAddTourViewCommand = new RelayCommand(_ => OpenAddTourView());
+            AddTourCommand = new RelayCommand(_ => OpenAddTourWindow());
+            DeleteTourCommand = new RelayCommand(_ => DeleteTour(), _ => SelectedTour != null);
+            ModifyTourCommand = new RelayCommand(_ => ModifyTour(), _ => SelectedTour != null);
         }
 
-        private void ShowTourDetails()
+        private void OpenAddTourWindow()
+        {
+            var addTourWindow = new AddTourView(TourListViewModel);
+            addTourWindow.ShowDialog();
+        }
+
+        private void DeleteTour()
         {
             if (SelectedTour != null)
             {
-                CurrentView = new TourDetailView { DataContext = new TourDetailViewModel(SelectedTour, _tourListViewModel) };
+                _tourListViewModel.DeleteTour(SelectedTour);
+                SelectedTour = null;
+                OnPropertyChanged(nameof(Tours));
             }
         }
 
-        private void OpenAddTourView()
+        private void ModifyTour()
         {
-            AddTourView addTourView = new AddTourView(_tourListViewModel);
-            bool? result = addTourView.ShowDialog();
-
-            // If the dialog was closed with a successful result, refresh the tour list
-            if (result == true)
+            if (SelectedTour != null)
             {
-                // Notify the UI that the Tours collection has been updated
-                OnPropertyChanged(nameof(TourListViewModel));
+                _tourListViewModel.ModifySelectedTour();
+                OnPropertyChanged(nameof(Tours));
             }
         }
 

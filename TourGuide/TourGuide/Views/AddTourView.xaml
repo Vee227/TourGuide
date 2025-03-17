@@ -6,34 +6,34 @@
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Tour Name:" Grid.Row="0"/>
-        <TextBox x:Name="TourNameTextBox" Grid.Row="1" Width="250"/>
+        <TextBox x:Name="TourNameTextBox" Grid.Row="1" HorizontalAlignment="Stretch"/>
 
         <TextBlock Text="Description:" Grid.Row="2"/>
-        <TextBox x:Name="DescriptionTextBox" Grid.Row="3" Width="250"/>
+        <TextBox x:Name="DescriptionTextBox" Grid.Row="3" HorizontalAlignment="Stretch"/>
 
         <TextBlock Text="Start Location:" Grid.Row="4"/>
-        <TextBox x:Name="StartLocationTextBox" Grid.Row="5" Width="250"/>
+        <TextBox x:Name="StartLocationTextBox" Grid.Row="5" HorizontalAlignment="Stretch"/>
 
         <TextBlock Text="End Location:" Grid.Row="6"/>
-        <TextBox x:Name="EndLocationTextBox" Grid.Row="7" Width="250"/>
+        <TextBox x:Name="EndLocationTextBox" Grid.Row="7" HorizontalAlignment="Stretch"/>
 
         <TextBlock Text="Transport Type:" Grid.Row="8"/>
-        <ComboBox x:Name="TransportTypeComboBox" Grid.Row="9" Width="250">
+        <ComboBox x:Name="TransportTypeComboBox" Grid.Row="9" HorizontalAlignment="Stretch">
             <ComboBoxItem Content="Bike"/>
             <ComboBoxItem Content="Hike"/>
             <ComboBoxItem Content="Run"/>
@@ -41,7 +41,7 @@
         </ComboBox>
 
         <TextBlock Text="Distance:" Grid.Row="10"/>
-        <TextBox x:Name="DistanceTextBox" Grid.Row="11" Width="250"/>
+        <TextBox x:Name="DistanceTextBox" Grid.Row="11" HorizontalAlignment="Stretch"/>
 
         <Button Content="Save" Grid.Row="12" Click="SaveTour_Click" HorizontalAlignment="Center"/>
     </Grid>
