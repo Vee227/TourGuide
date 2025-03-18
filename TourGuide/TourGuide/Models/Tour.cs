@@ -13,11 +13,11 @@ namespace TourGuide.Models
         public string startLocation { get; set; } = string.Empty;
         public string endLocation { get; set; } = string.Empty;
         public string transporttype { get; set; } = string.Empty;
-        public int distance { get; set; }
+        public double distance { get; set; }
 
         public Tour() { }
 
-        public Tour(string name, string description, string startLocation, string endLocation, string transportType, int distance)
+        public Tour(string name, string description, string startLocation, string endLocation, string transportType, double distance)
         {
             this.name = name;
             this.description = description;

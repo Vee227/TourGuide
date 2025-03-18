@@ -10,7 +10,13 @@
     <Compile Update="Controls\TourCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\AddTourLogView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AddTourView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ModifyTourLogView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\SearchView.xaml.cs">

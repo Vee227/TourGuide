@@ -23,6 +23,13 @@ namespace TourGuide.Views
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(DescriptionTextBox.Text))
+            {
+                MessageBox.Show("Description cannot be empty.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+
             if (string.IsNullOrWhiteSpace(StartLocationTextBox.Text))
             {
                 MessageBox.Show("Start Location cannot be empty.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -35,11 +42,20 @@ namespace TourGuide.Views
                 return;
             }
 
-            if (!int.TryParse(DistanceTextBox.Text, out int distance) || distance <= 0)
+            string[] validTransportTypes = { "Bike", "Hike", "Run", "Rollerskates" };
+
+            if (!validTransportTypes.Contains(TransportTypeComboBox.Text))
             {
-                MessageBox.Show("Distance must be a valid positive number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Invalid transport type selected.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
+            if (!double.TryParse(DistanceTextBox.Text, out double distance) || distance <= 0)
+            {
+                MessageBox.Show("Distance must be a valid positive number (e.g., 10.5).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
 
             try
             {

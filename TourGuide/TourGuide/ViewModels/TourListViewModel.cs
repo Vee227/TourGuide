@@ -85,7 +85,11 @@ namespace TourGuide.ViewModels
         {
             try
             {
-                var json = JsonSerializer.Serialize(Tours, new JsonSerializerOptions { WriteIndented = true });
+                var json = JsonSerializer.Serialize(Tours, new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                    NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowNamedFloatingPointLiterals
+                });
                 File.WriteAllText(FilePath, json);
             }
             catch (Exception ex)

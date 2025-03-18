@@ -1,10 +1,18 @@
 [
   {
-    "name": "Testtour",
-    "description": "Testing",
-    "startLocation": "Teststart",
-    "endLocation": "Testend",
-    "transporttype": "Run",
-    "distance": 25
+    "name": "cxxfcgf",
+    "description": "dfgfsgfsgsf",
+    "startLocation": "gfdgdfgfg",
+    "endLocation": "fgfgfggsddf",
+    "transporttype": "Bike",
+    "distance": 44.56
+  },
+  {
+    "name": "dsfsfsf",
+    "description": "sdfsdf",
+    "startLocation": "sdfsdfsd",
+    "endLocation": "gggffd",
+    "transporttype": "Bike",
+    "distance": 80
   }
 ]

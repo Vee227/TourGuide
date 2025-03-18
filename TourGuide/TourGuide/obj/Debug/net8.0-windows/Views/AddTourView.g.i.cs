@@ -100,7 +100,7 @@ namespace TourGuide.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TourGuide;component/views/addtourview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TourGuide;V1.0.0.0;component/views/addtourview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AddTourView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

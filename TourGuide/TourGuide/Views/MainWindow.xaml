@@ -63,6 +63,14 @@
                             Background="#E74C3C" Foreground="White"
                             BorderThickness="0" Cursor="Hand"
                             Command="{Binding DeleteTourCommand}"/>
+                    <Button Content="📜" Width="40" Height="40" ToolTip="Add Tour Log" Margin="20,0,0,0"
+                            Background="#3498DB" Foreground="White"
+                            BorderThickness="0" Cursor="Hand" 
+                            Command="{Binding AddTourLogCommand}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,10,10,0">
+                    
                 </StackPanel>
             </StackPanel>
 
@@ -95,27 +103,27 @@
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Beschreibung:" Width="100" FontWeight="Bold"/>
+                                    <TextBlock Text="Description:" Width="100" FontWeight="Bold"/>
                                     <TextBox Text="{Binding description, Mode=TwoWay}" Width="200"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Startpunkt:" Width="100" FontWeight="Bold"/>
+                                    <TextBlock Text="Start point:" Width="100" FontWeight="Bold"/>
                                     <TextBox Text="{Binding startLocation, Mode=TwoWay}" Width="200"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Zielpunkt:" Width="100" FontWeight="Bold"/>
+                                    <TextBlock Text="End point:" Width="100" FontWeight="Bold"/>
                                     <TextBox Text="{Binding endLocation, Mode=TwoWay}" Width="200"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Transportmittel:" Width="100" FontWeight="Bold"/>
+                                    <TextBlock Text="Transport:" Width="100" FontWeight="Bold"/>
                                     <TextBox Text="{Binding transporttype, Mode=TwoWay}" Width="200"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Distanz (km):" Width="100" FontWeight="Bold"/>
+                                    <TextBlock Text="Distance (km):" Width="100" FontWeight="Bold"/>
                                     <TextBox Text="{Binding distance, Mode=TwoWay}" Width="200"/>
                                 </StackPanel>
 
@@ -124,9 +132,31 @@
                         </ScrollViewer>
                     </TabItem>
                     <TabItem Header="Tour Logs">
-                        <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <ContentControl Content="{Binding TourLogViewModel}" />
-                        </ScrollViewer>
+                        <StackPanel Margin="10">
+                            <ListView ItemsSource="{Binding TourLogViewModel.TourLogs}"
+                  SelectedItem="{Binding TourLogViewModel.SelectedTourLog, Mode=TwoWay}"
+                  Height="200">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}" Width="100"/>
+                                        <GridViewColumn Header="Comment" DisplayMemberBinding="{Binding Comment}" Width="200"/>
+                                        <GridViewColumn Header="Difficulty" DisplayMemberBinding="{Binding Difficulty}" Width="80"/>
+                                        <GridViewColumn Header="Total Time" DisplayMemberBinding="{Binding TotalTime}" Width="100"/>
+                                        <GridViewColumn Header="Rating" DisplayMemberBinding="{Binding Rating}" Width="80"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                                <Button Content="✏" Width="40" Height="40" ToolTip="Modify Tour Log" Margin="20,0,0,0"
+                                        Background="#F39C12" Foreground="White"
+                                        Command="{Binding ModifyTourLogCommand}"/>
+                                <Button Content="🗑" Width="40" Height="40" ToolTip="Delete Tour Log" Margin="20,0,0,0"
+                                        Background="#E74C3C" Foreground="White"
+                                        BorderThickness="0" Cursor="Hand"
+                                        Command="{Binding DeleteTourLogCommand}"/>
+                            </StackPanel>
+                        </StackPanel>
                     </TabItem>
                 </TabControl>
             </Grid>
