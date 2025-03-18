@@ -14,10 +14,11 @@ namespace TourGuide.Models
         public string endLocation { get; set; } = string.Empty;
         public string transporttype { get; set; } = string.Empty;
         public double distance { get; set; }
-
+        public int estimatedTime { get; set; }
+ 
         public Tour() { }
 
-        public Tour(string name, string description, string startLocation, string endLocation, string transportType, double distance)
+        public Tour(string name, string description, string startLocation, string endLocation, string transportType, double distance, int estimatedTime)
         {
             this.name = name;
             this.description = description;
@@ -25,6 +26,7 @@ namespace TourGuide.Models
             this.endLocation = endLocation;
             this.transporttype = transportType;
             this.distance = distance;
+            this.estimatedTime = estimatedTime;
         }
 
         public override string ToString()

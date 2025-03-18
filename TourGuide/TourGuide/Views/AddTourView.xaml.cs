@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
+using System.IO;
 using System.Windows;
 using TourGuide.Models;
 using TourGuide.ViewModels;
@@ -15,6 +17,7 @@ namespace TourGuide.Views
             _tourListVM = tourListViewModel;
         }
 
+            
         private void SaveTour_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(TourNameTextBox.Text))
@@ -56,6 +59,12 @@ namespace TourGuide.Views
                 return;
             }
 
+            if (!int.TryParse(TimeTextBox.Text, out int estimatedTime) || estimatedTime <= 0)
+            {
+                MessageBox.Show("Time must be a valid positive number (e.g., 10).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
 
             try
             {
@@ -67,6 +76,7 @@ namespace TourGuide.Views
                     endLocation = EndLocationTextBox.Text,
                     transporttype = TransportTypeComboBox.Text,
                     distance = distance,
+                    estimatedTime = estimatedTime,
                 };
 
                 _tourListVM.AddTour(newTour);

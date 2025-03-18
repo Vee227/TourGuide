@@ -18,6 +18,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+                        
         </Grid.RowDefinitions>
 
         <TextBlock Text="Tour Name:" Grid.Row="0"/>
@@ -43,6 +46,9 @@
         <TextBlock Text="Distance:" Grid.Row="10"/>
         <TextBox x:Name="DistanceTextBox" Grid.Row="11" HorizontalAlignment="Stretch"/>
 
-        <Button Content="Save" Grid.Row="12" Click="SaveTour_Click" HorizontalAlignment="Center"/>
+        <TextBlock Text="Estimated Time:" Grid.Row="12"/>
+        <TextBox x:Name="TimeTextBox" Grid.Row="13" HorizontalAlignment="Stretch"/>
+
+        <Button Content="Save" Grid.Row="17" Click="SaveTour_Click" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

@@ -30,6 +30,12 @@ C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-wi
 C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\TourGuide.pdb
 C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\TourGuide.genruntimeconfig.cache
 C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\ref\TourGuide.dll
+C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourView.baml
+C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourView.g.cs
+C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourLogView.g.cs
+C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourLogView.baml
+C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\ModifyTourLogView.g.cs
+C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\ModifyTourLogView.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\bin\Debug\net8.0-windows\TourGuide.exe
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\bin\Debug\net8.0-windows\TourGuide.deps.json
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\bin\Debug\net8.0-windows\TourGuide.runtimeconfig.json
@@ -38,8 +44,10 @@ C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Controls\TourCard.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourView.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Controls\TourCard.g.cs
+C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourLogView.g.cs
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourView.g.cs
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\MainWindow.g.cs
+C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\ModifyTourLogView.g.cs
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\SearchView.g.cs
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\TourDetailView.g.cs
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\TourListView.g.cs
@@ -48,7 +56,9 @@ C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\TourGuide_MarkupCompile.cache
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\TourGuide_MarkupCompile.lref
+C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourLogView.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\MainWindow.baml
+C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\ModifyTourLogView.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\SearchView.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\TourDetailView.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\TourListView.baml
@@ -64,9 +74,3 @@ C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\TourGuide.pdb
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\TourGuide.genruntimeconfig.cache
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\ref\TourGuide.dll
-C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourView.baml
-C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourView.g.cs
-C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourLogView.g.cs
-C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\AddTourLogView.baml
-C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\ModifyTourLogView.g.cs
-C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\Views\ModifyTourLogView.baml

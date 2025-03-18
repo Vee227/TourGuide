@@ -127,6 +127,11 @@
                                     <TextBox Text="{Binding distance, Mode=TwoWay}" Width="200"/>
                                 </StackPanel>
 
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Time (mins):" Width="100" FontWeight="Bold"/>
+                                    <TextBox Text="{Binding estimatedTime, Mode=TwoWay}" Width="200"/>
+                                </StackPanel>
+
                             </StackPanel>
                             <!--<ContentControl Content="{Binding CurrentView}" />-->
                         </ScrollViewer>

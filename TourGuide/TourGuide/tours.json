@@ -5,7 +5,8 @@
     "startLocation": "gfdgdfgfg",
     "endLocation": "fgfgfggsddf",
     "transporttype": "Bike",
-    "distance": 44.56
+    "distance": 44.56,
+    "estimatedTime": 0
   },
   {
     "name": "dsfsfsf",
@@ -13,6 +14,16 @@
     "startLocation": "sdfsdfsd",
     "endLocation": "gggffd",
     "transporttype": "Bike",
-    "distance": 80
+    "distance": 80,
+    "estimatedTime": 0
+  },
+  {
+    "name": "Testtour",
+    "description": "Testing",
+    "startLocation": "Teststart",
+    "endLocation": "Testend",
+    "transporttype": "Hike",
+    "distance": 5,
+    "estimatedTime": 200
   }
 ]

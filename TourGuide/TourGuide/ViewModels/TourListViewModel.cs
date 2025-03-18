@@ -72,6 +72,8 @@ namespace TourGuide.ViewModels
                 existingTour.endLocation = SelectedTour.endLocation;
                 existingTour.transporttype = SelectedTour.transporttype;
                 existingTour.distance = SelectedTour.distance;
+                existingTour.estimatedTime = SelectedTour.estimatedTime;
+
 
                 SaveTours();
                 OnPropertyChanged(nameof(Tours));

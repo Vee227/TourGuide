@@ -119,10 +119,10 @@ namespace TourGuide.ViewModels
         }
 
 
-        private void ModifyTourLog()
+        /*private void ModifyTourLog()
         {
             TourLogViewModel.ModifyTourLog();
-        }
+        }*/
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
