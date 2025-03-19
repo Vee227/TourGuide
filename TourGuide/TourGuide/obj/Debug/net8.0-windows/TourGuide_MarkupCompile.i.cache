@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\App.xaml
-9-550378490
+9861945868
 
-24-251384171
+24-812914079
 1981839832580
-Controls\TourCard.xaml;Views\AddTourLogView.xaml;Views\AddTourView.xaml;Views\MainWindow.xaml;Views\ModifyTourLogView.xaml;Views\SearchView.xaml;Views\TourDetailView.xaml;Views\TourListView.xaml;Views\TourLogView.xaml;
+PresentationLayer\Controls\TourCard.xaml;PresentationLayer\Views\AddTourLogView.xaml;PresentationLayer\Views\AddTourView.xaml;PresentationLayer\Views\MainWindow.xaml;PresentationLayer\Views\ModifyTourLogView.xaml;PresentationLayer\Views\SearchView.xaml;PresentationLayer\Views\TourDetailView.xaml;PresentationLayer\Views\TourListView.xaml;PresentationLayer\Views\TourLogView.xaml;
 
-False
+True
 
