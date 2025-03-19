@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourGuide", "TourGuide\TourGuide.csproj", "{DBAB431A-DFE3-45DB-BB97-20C1B0DF8BED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourGuide.Test", "TourGuide.Test\TourGuide.Test.csproj", "{FBD4ECA5-A673-4AB2-AEAB-CFF822C088F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DBAB431A-DFE3-45DB-BB97-20C1B0DF8BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBAB431A-DFE3-45DB-BB97-20C1B0DF8BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBAB431A-DFE3-45DB-BB97-20C1B0DF8BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBD4ECA5-A673-4AB2-AEAB-CFF822C088F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD4ECA5-A673-4AB2-AEAB-CFF822C088F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBD4ECA5-A673-4AB2-AEAB-CFF822C088F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBD4ECA5-A673-4AB2-AEAB-CFF822C088F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

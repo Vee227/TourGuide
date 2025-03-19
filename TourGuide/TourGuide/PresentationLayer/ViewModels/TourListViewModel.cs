@@ -44,10 +44,18 @@ namespace TourGuide.PresentationLayer.ViewModels
 
         public void AddTour(Tour newTour)
         {
+            if (string.IsNullOrWhiteSpace(newTour.name) ||
+                string.IsNullOrWhiteSpace(newTour.startLocation) ||
+                string.IsNullOrWhiteSpace(newTour.endLocation) ||
+                newTour.distance <= 0 || newTour.estimatedTime <= 0)
+            {
+                throw new ArgumentException("Invalid tour data.");
+            }
             Tours.Add(newTour);
             SaveTours();
             OnPropertyChanged(nameof(Tours));
         }
+
 
         public void DeleteTour(Tour tour)
         {
@@ -100,26 +108,32 @@ namespace TourGuide.PresentationLayer.ViewModels
             }
         }
 
-        private void LoadTours()
+        public void LoadTours()
         {
             try
             {
-                if (File.Exists(FilePath))
+                Tours.Clear();  // Always reset before loading
+
+                if (!File.Exists(FilePath))
                 {
-                    var json = File.ReadAllText(FilePath);
-                    var loadedTours = JsonSerializer.Deserialize<ObservableCollection<Tour>>(json);
-                    if (loadedTours != null)
-                    {
-                        Tours = loadedTours;
-                        OnPropertyChanged(nameof(Tours));
-                    }
+                    Tours = new ObservableCollection<Tour>();
+                    return;
                 }
+
+                var json = File.ReadAllText(FilePath);
+                var loadedTours = JsonSerializer.Deserialize<ObservableCollection<Tour>>(json) ?? new ObservableCollection<Tour>();
+
+                Tours = loadedTours;
+                OnPropertyChanged(nameof(Tours));
             }
-            catch (Exception ex)
+            catch (JsonException)
             {
-                Console.WriteLine($"Fehler beim Laden der Touren: {ex.Message}");
+                Console.WriteLine("Error: Invalid JSON format.");
+                Tours = new ObservableCollection<Tour>();
             }
         }
+
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
