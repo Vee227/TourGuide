@@ -52,7 +52,7 @@ namespace TourGuide.PresentationLayer.Controls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TourGuide;V1.0.0.0;component/presentationlayer/controls/tourcard.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TourGuide;component/presentationlayer/controls/tourcard.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\PresentationLayer\Controls\TourCard.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -6,8 +6,8 @@ using TourGuide.PresentationLayer.ViewModels;
 using TourGuide.PresentationLayer.Comands;
 
 namespace TourGuide.PresentationLayer.ViewModels
-{
-    public class TourCardViewModel
+{   //FIX NICHT DABEI
+    /*public class TourCardViewModel
     {
         public Tour Tour { get; set; }
         public ICommand EditCommand { get; set; }
@@ -29,5 +29,5 @@ namespace TourGuide.PresentationLayer.ViewModels
         {
             Console.WriteLine($"Deleting {Tour.name}");
         }
-    }
+    }*/
 }

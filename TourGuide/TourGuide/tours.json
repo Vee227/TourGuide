@@ -9,15 +9,6 @@
     "estimatedTime": 0
   },
   {
-    "name": "dsfsfsf",
-    "description": "sdfsdf",
-    "startLocation": "sdfsdfsd",
-    "endLocation": "gggffd",
-    "transporttype": "Bike",
-    "distance": 80,
-    "estimatedTime": 0
-  },
-  {
     "name": "Testtour",
     "description": "Testing",
     "startLocation": "Teststart",

@@ -10,9 +10,9 @@ using System.ComponentModel;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
-    class TourDetailViewModel : INotifyPropertyChanged
-    {
-        private Tour _selectedTour;
+    class TourDetailViewModel //: INotifyPropertyChanged
+    {   //FIX NICHT DABEI  
+        /*private Tour _selectedTour;
         public Tour SelectedTour
         {
             get => _selectedTour;
@@ -52,6 +52,6 @@ namespace TourGuide.PresentationLayer.ViewModels
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        }*/
     }
 }
