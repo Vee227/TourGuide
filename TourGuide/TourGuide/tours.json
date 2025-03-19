@@ -16,5 +16,14 @@
     "transporttype": "Hike",
     "distance": 5,
     "estimatedTime": 200
+  },
+  {
+    "name": "Addtour",
+    "description": "Addtour zum testen",
+    "startLocation": "Addstart",
+    "endLocation": "Addend",
+    "transporttype": "Hike",
+    "distance": 5,
+    "estimatedTime": 60
   }
 ]

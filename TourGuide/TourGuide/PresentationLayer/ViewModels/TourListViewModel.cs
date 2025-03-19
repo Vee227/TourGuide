@@ -112,7 +112,7 @@ namespace TourGuide.PresentationLayer.ViewModels
         {
             try
             {
-                Tours.Clear();  // Always reset before loading
+                Tours.Clear(); 
 
                 if (!File.Exists(FilePath))
                 {

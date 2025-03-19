@@ -90,7 +90,6 @@ namespace TourGuide.PresentationLayer.ViewModels
             {
                 _tourListViewModel.DeleteTour(SelectedTour);
                 SelectedTour = null;
-                //OnPropertyChanged(nameof(TourListViewModel.Tours));
             }
         }
 
@@ -104,7 +103,7 @@ namespace TourGuide.PresentationLayer.ViewModels
             if (SelectedTour != null)
             {
                 _tourListViewModel.ModifySelectedTour();
-                //_tourListViewModel.SaveTours();
+                _tourListViewModel.SaveTours();
                 OnPropertyChanged(nameof(TourListViewModel.Tours));
             }
         }
