@@ -272,7 +272,6 @@ C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\TourGuide.csproj.AssemblyReference.cache
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Controls\TourCard.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Views\AddTourView.baml
-C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Views\TourDetailView.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Controls\TourCard.g.cs
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Views\AddTourLogView.g.cs
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Views\AddTourView.g.cs
@@ -290,6 +289,7 @@ C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Views\MainWindow.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Views\ModifyTourLogView.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Views\SearchView.baml
+C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Views\TourDetailView.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Views\TourListView.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\PresentationLayer\Views\TourLogView.baml
 C:\Users\grani\Desktop\FHTechnikum\Semester4\SWEN\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\TourGuide.g.resources

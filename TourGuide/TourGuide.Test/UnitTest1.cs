@@ -26,7 +26,6 @@ namespace TourGuide.Tests
         [Fact]
         public void AddTour_ValidTour_ShouldBeAdded()
         {
-            // Arrange
             var tourListVM = new TourListViewModel();
             var newTour = new Tour
             {
@@ -39,11 +38,11 @@ namespace TourGuide.Tests
                 estimatedTime = 300
             };
 
-            // Act
+            
             tourListVM.AddTour(newTour);
-            tourListVM.LoadTours();  // Reload to verify persistence
+            tourListVM.LoadTours(); 
 
-            // Assert
+            
             Assert.Contains(tourListVM.Tours, t => t.name == "Mountain Trip");
         }
 
@@ -53,12 +52,12 @@ namespace TourGuide.Tests
             var tourListVM = new TourListViewModel();
             var invalidTour = new Tour
             {
-                name = "", // Invalid name
+                name = "", 
                 startLocation = "",
                 endLocation = "",
-                transporttype = "Plane", // Not allowed
-                distance = -10, // Invalid
-                estimatedTime = -1 // Invalid
+                transporttype = "Plane", 
+                distance = -10, 
+                estimatedTime = -1 
             };
 
             Assert.Throws<ArgumentException>(() => tourListVM.AddTour(invalidTour));
@@ -67,25 +66,25 @@ namespace TourGuide.Tests
         [Fact]
         public void LoadTours_ValidFile_ShouldLoadCorrectly()
         {
-            // Arrange
-            ResetTestFiles();  // Start fresh
+            
+            ResetTestFiles(); 
             string json = "[{\"name\":\"Beach Walk\",\"description\":\"Relaxing\",\"startLocation\":\"Hotel\",\"endLocation\":\"Shore\",\"transporttype\":\"Walk\",\"distance\":5,\"estimatedTime\":60}]";
             File.WriteAllText(TestToursFile, json);
 
             var tourListVM = new TourListViewModel();
 
-            // Act
+            
             tourListVM.LoadTours();
 
-            // Assert
-            Assert.Single(tourListVM.Tours);  // Ensures exactly one tour is loaded
+            
+            Assert.Single(tourListVM.Tours); 
             Assert.Equal("Mountain Trip", tourListVM.Tours[0].name);
         }
 
         [Fact]
         public void DeleteTour_ExistingTour_ShouldRemoveFromFile()
         {
-            // Arrange
+            
             var tourListVM = new TourListViewModel();
             var testTour = new Tour
             {
@@ -99,11 +98,10 @@ namespace TourGuide.Tests
             };
             tourListVM.AddTour(testTour);
 
-            // Act
+            
             tourListVM.DeleteTour(testTour);
-            tourListVM.LoadTours();  // Reload to check if it's gone
+            tourListVM.LoadTours();  
 
-            // Assert
             Assert.DoesNotContain(tourListVM.Tours, t => t.name == "To Be Deleted");
         }
 
@@ -121,11 +119,11 @@ namespace TourGuide.Tests
                 Rating = 5
             };
 
-            // Act
+            
             tourLogVM.AddTourLog(newLog);
-            tourLogVM.LoadTourLogs("Mountain Trip"); // Reload to verify persistence
+            tourLogVM.LoadTourLogs("Mountain Trip"); 
 
-            // Assert
+            
             Assert.Contains(tourLogVM.TourLogs, log => log.TourName == "Mountain Trip");
         }
 
@@ -134,9 +132,9 @@ namespace TourGuide.Tests
         {
             var tourLogVM = new TourLogViewModel();
 
-            // Act & Assert
+            
             Exception ex = Record.Exception(() => tourLogVM.DeleteTourLog());
-            Assert.Null(ex); // Should not throw an exception
+            Assert.Null(ex); 
         }
     }
 }
