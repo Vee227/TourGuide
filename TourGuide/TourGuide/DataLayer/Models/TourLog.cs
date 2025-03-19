@@ -11,8 +11,8 @@ namespace TourGuide.DataLayer.Models
         public string TourName { get; set; }
         public string Date { get; set; }
         public string Comment { get; set; }
-        public int Difficulty { get; set; } // 1-5 scale
-        public int TotalTime { get; set; } // in minutes
-        public int Rating { get; set; } // 1-5 scale
+        public int Difficulty { get; set; } 
+        public int TotalTime { get; set; } 
+        public int Rating { get; set; } 
     }
 }

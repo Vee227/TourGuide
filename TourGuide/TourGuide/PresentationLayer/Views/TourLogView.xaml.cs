@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace TourGuide.PresentationLayer.Views
 {
-    /// <summary>
-    /// Interaction logic for TourLogView.xaml
-    /// </summary>
     public partial class TourLogView : UserControl
     {
         public TourLogView()

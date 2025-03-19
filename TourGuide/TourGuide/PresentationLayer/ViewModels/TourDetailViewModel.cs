@@ -39,13 +39,11 @@ namespace TourGuide.PresentationLayer.ViewModels
 
         private void ModifyTour()
         {
-            // Implement modify logic (e.g., open a dialog to edit the tour)
             Console.WriteLine($"Modifying {SelectedTour.name}");
         }
 
         private void DeleteTour()
         {
-            // Implement delete logic (e.g., remove the tour from the list)
             _tourListViewModel.DeleteTour(SelectedTour);
             Console.WriteLine($"Deleting {SelectedTour.name}");
         }

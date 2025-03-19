@@ -118,12 +118,6 @@ namespace TourGuide.PresentationLayer.ViewModels
             }
         }
 
-
-        /*private void ModifyTourLog()
-        {
-            TourLogViewModel.ModifyTourLog();
-        }*/
-
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {

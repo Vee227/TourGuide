@@ -17,23 +17,19 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Title -->
         <TextBlock Text="Add Tour Log" FontSize="20" FontWeight="Bold"
                    HorizontalAlignment="Center" Grid.Row="0" Margin="0,0,0,20"/>
 
-        <!-- Date -->
         <StackPanel Grid.Row="1" Margin="0,0,0,10">
             <TextBlock Text="Date (YYYY-MM-DD):" FontWeight="SemiBold"/>
             <TextBox x:Name="DateTextBox" Width="360" Height="30" Padding="5"/>
         </StackPanel>
 
-        <!-- Comment -->
         <StackPanel Grid.Row="2" Margin="0,0,0,10">
             <TextBlock Text="Comment:" FontWeight="SemiBold"/>
             <TextBox x:Name="CommentTextBox" Width="360" Height="60" Padding="5" TextWrapping="Wrap"/>
         </StackPanel>
 
-        <!-- Difficulty -->
         <StackPanel Grid.Row="3" Margin="0,0,0,10">
             <TextBlock Text="Difficulty (1-5):" FontWeight="SemiBold"/>
             <ComboBox x:Name="DifficultyComboBox" Width="360" Height="35" Padding="5">
@@ -45,13 +41,11 @@
             </ComboBox>
         </StackPanel>
 
-        <!-- Total Time -->
         <StackPanel Grid.Row="4" Margin="0,0,0,10">
             <TextBlock Text="Total Time (minutes):" FontWeight="SemiBold"/>
             <TextBox x:Name="TotalTimeTextBox" Width="360" Height="30" Padding="5"/>
         </StackPanel>
 
-        <!-- Rating -->
         <StackPanel Grid.Row="5" Margin="0,0,0,10">
             <TextBlock Text="Rating (1-5):" FontWeight="SemiBold"/>
             <ComboBox x:Name="RatingComboBox" Width="360" Height="35" Padding="5">
@@ -63,7 +57,6 @@
             </ComboBox>
         </StackPanel>
 
-        <!-- Save Button -->
         <StackPanel Grid.Row="6" HorizontalAlignment="Center" Margin="20,10,20,0">
             <Button Content="💾 Save Log" Click="SaveTourLog_Click"
                     Background="#27AE60" Foreground="White"

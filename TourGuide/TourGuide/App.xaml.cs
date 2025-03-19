@@ -4,10 +4,7 @@ using System.Windows;
 
 namespace TourGuide
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
+      public partial class App : Application
     {
     }
 

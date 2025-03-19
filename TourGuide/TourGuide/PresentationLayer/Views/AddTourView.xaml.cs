@@ -80,7 +80,7 @@ namespace TourGuide.PresentationLayer.Views
                 };
 
                 _tourListVM.AddTour(newTour);
-                DialogResult = true; // Setzt den Dialog als erfolgreich geschlossen
+                DialogResult = true; 
                 Close();
             }
             catch (Exception ex)

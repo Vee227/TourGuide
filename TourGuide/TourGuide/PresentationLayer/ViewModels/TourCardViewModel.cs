@@ -22,13 +22,11 @@ namespace TourGuide.PresentationLayer.ViewModels
 
         private void EditTour(object obj)
         {
-            // Implement edit logic (open tour detail view)
             Console.WriteLine($"Editing {Tour.name}");
         }
 
         private void DeleteTour(object obj)
         {
-            // Implement delete logic
             Console.WriteLine($"Deleting {Tour.name}");
         }
     }
