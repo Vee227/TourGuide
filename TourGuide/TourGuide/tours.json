@@ -25,5 +25,14 @@
     "transporttype": "Hike",
     "distance": 5,
     "estimatedTime": 60
+  },
+  {
+    "name": "NewTour1304",
+    "description": "this is for testing the new build",
+    "startLocation": "Vienna",
+    "endLocation": "Warsaw",
+    "transporttype": "Hike",
+    "distance": 40,
+    "estimatedTime": 34
   }
 ]

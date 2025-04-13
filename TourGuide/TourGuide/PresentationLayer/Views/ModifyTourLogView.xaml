@@ -17,40 +17,51 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Date:" Grid.Row="0" Margin="0,5,0,0"/>
-        <TextBox Text="{Binding SelectedTourLog.Date, Mode=TwoWay}" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,2,0,8" Padding="5"/>
+        <TextBlock Text="Modify Tour Log" FontSize="20" FontWeight="Bold"
+                   HorizontalAlignment="Center" Grid.Row="0" Margin="0,0,0,20"/>
 
-        <TextBlock Text="Comment:" Grid.Row="2" Margin="0,5,0,0"/>
-        <TextBox Text="{Binding SelectedTourLog.Comment, Mode=TwoWay}" Grid.Row="3" HorizontalAlignment="Stretch" Margin="0,2,0,8" Padding="5"/>
+        <StackPanel Grid.Row="1" Margin="0,0,0,10">
+            <TextBlock Text="Date (YYYY-MM-DD):" FontWeight="SemiBold"/>
+            <TextBox Width="360" Height="30" Padding="5"
+                     Text="{Binding SelectedTourLog.Date, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
 
-        <TextBlock Text="Difficulty (1-5):" Grid.Row="4" Margin="0,5,0,0"/>
-        <ComboBox x:Name="DifficultyComboBox" Grid.Row="5" HorizontalAlignment="Stretch" SelectedItem="{Binding SelectedTourLog.Difficulty, Mode=TwoWay}" Margin="0,2,0,8" Padding="5">
-            <ComboBoxItem Content="1"/>
-            <ComboBoxItem Content="2"/>
-            <ComboBoxItem Content="3"/>
-            <ComboBoxItem Content="4"/>
-            <ComboBoxItem Content="5"/>
-        </ComboBox>
+        <StackPanel Grid.Row="2" Margin="0,0,0,10">
+            <TextBlock Text="Comment:" FontWeight="SemiBold"/>
+            <TextBox Width="360" Height="60" Padding="5" TextWrapping="Wrap"
+                     Text="{Binding SelectedTourLog.Comment, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
 
-        <TextBlock Text="Total Time (min):" Grid.Row="6" Margin="0,5,0,0"/>
-        <TextBox x:Name="TotalTimeTextBox" Text="{Binding SelectedTourLog.TotalTime, Mode=TwoWay}" Grid.Row="7" HorizontalAlignment="Stretch" Margin="0,2,0,8" Padding="5"/>
+        <StackPanel Grid.Row="3" Margin="0,0,0,10">
+            <TextBlock Text="Difficulty (1-5):" FontWeight="SemiBold"/>
+            <ComboBox ItemsSource="{Binding DifficultyOptions}"
+                      SelectedItem="{Binding SelectedTourLog.Difficulty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      Width="360" Height="35" Padding="5"/>
 
-        <TextBlock Text="Rating (1-5):" Grid.Row="8" Margin="0,5,0,0"/>
-        <ComboBox x:Name="RatingComboBox" Grid.Row="9" HorizontalAlignment="Stretch" SelectedItem="{Binding SelectedTourLog.Rating, Mode=TwoWay}" Margin="0,2,0,8" Padding="5">
-            <ComboBoxItem Content="1"/>
-            <ComboBoxItem Content="2"/>
-            <ComboBoxItem Content="3"/>
-            <ComboBoxItem Content="4"/>
-            <ComboBoxItem Content="5"/>
-        </ComboBox>
+        </StackPanel>
 
-        <Button Content="💾 Save" Grid.Row="10" Click="SaveTourLog_Click" HorizontalAlignment="Center" Width="100" Padding="8" Margin="0,10,0,0" Background="#27AE60" Foreground="White"/>
+        <StackPanel Grid.Row="4" Margin="0,0,0,10">
+            <TextBlock Text="Total Time (minutes):" FontWeight="SemiBold"/>
+            <TextBox Width="360" Height="30" Padding="5"
+                     Text="{Binding SelectedTourLog.TotalTime, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
 
+        <StackPanel Grid.Row="5" Margin="0,0,0,10">
+            <TextBlock Text="Rating (1-5):" FontWeight="SemiBold"/>
+            <ComboBox ItemsSource="{Binding RatingOptions}"
+                      SelectedItem="{Binding SelectedTourLog.Rating, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      Width="360" Height="35" Padding="5"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" HorizontalAlignment="Center" Margin="20,10,20,0">
+            <Button Content="✏️ Save Changes"
+                    Command="{Binding SaveCommand}"
+                    Background="#2980B9" Foreground="White"
+                    Width="180" Height="40" FontSize="14"
+                    Cursor="Hand" FontWeight="Bold"/>
+        </StackPanel>
     </Grid>
 </Window>

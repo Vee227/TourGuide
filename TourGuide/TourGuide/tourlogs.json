@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "TourName": "NewTour1304",
+    "Date": "2014-05-07",
+    "Comment": "erggre",
+    "Difficulty": 4,
+    "TotalTime": 45,
+    "Rating": 5
+  }
+]
