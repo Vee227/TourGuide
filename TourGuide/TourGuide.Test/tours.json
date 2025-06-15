@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Mountain Trip",
+    "description": "A beautiful mountain tour",
+    "startLocation": "Base Camp",
+    "endLocation": "Summit",
+    "transporttype": "Hike",
+    "distance": 20,
+    "estimatedTime": 300
+  }
+]

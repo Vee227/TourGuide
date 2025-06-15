@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\grani\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\grani\\.nuget\\packages",
+      "C:\\Users\\wikto\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\wikto\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

@@ -8,6 +8,8 @@ namespace TourGuide.DataLayer.Models
 {
    public class Tour
     {
+        public int Id { get; set; }
+
         public string name { get; set; } = string.Empty;        
         public string description { get; set; } = string.Empty; 
         public string startLocation { get; set; } = string.Empty;
@@ -15,7 +17,9 @@ namespace TourGuide.DataLayer.Models
         public string transporttype { get; set; } = string.Empty;
         public double distance { get; set; }
         public int estimatedTime { get; set; }
- 
+
+        public ICollection<TourLog> TourLogs { get; set; } = new List<TourLog>();
+
         public Tour() { }
 
         public Tour(string name, string description, string startLocation, string endLocation, string transportType, double distance, int estimatedTime)

@@ -34,5 +34,14 @@
     "transporttype": "Hike",
     "distance": 40,
     "estimatedTime": 34
+  },
+  {
+    "name": "London",
+    "description": "i route around downtown",
+    "startLocation": "London Bridge",
+    "endLocation": "Big Ben",
+    "transporttype": "Hike",
+    "distance": 10,
+    "estimatedTime": 120
   }
 ]
