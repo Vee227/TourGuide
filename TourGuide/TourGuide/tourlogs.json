@@ -1,10 +1,13 @@
 [
   {
-    "TourName": "London",
-    "Date": "2024-12-01",
-    "Comment": "ldfjg",
-    "Difficulty": 4,
-    "TotalTime": 127,
-    "Rating": 3
+    "Id": 0,
+    "TourId": 0,
+    "Tour": null,
+    "TourName": "Nurzumtest",
+    "Date": "2025-06-28",
+    "Comment": "ja war eh easy",
+    "Difficulty": 1,
+    "TotalTime": 25,
+    "Rating": 5
   }
 ]

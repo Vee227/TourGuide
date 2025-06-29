@@ -10,7 +10,7 @@ using TourGuide.PresentationLayer.Views;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
-    class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel : INotifyPropertyChanged
     {
         private object _currentView;
         public object CurrentView
@@ -33,6 +33,7 @@ namespace TourGuide.PresentationLayer.ViewModels
                 {
                     _selectedTour = value;
                     OnPropertyChanged(nameof(SelectedTour));
+                    OnPropertyChanged(nameof(TourDetailViewModel)); 
                     TourLogViewModel.LoadTourLogs(_selectedTour?.name);
                     OnPropertyChanged(nameof(TourLogViewModel.TourLogs));
                 }
@@ -58,6 +59,9 @@ namespace TourGuide.PresentationLayer.ViewModels
         public ICommand AddTourLogCommand { get; }
         public ICommand DeleteTourLogCommand { get; }
         public ICommand ModifyTourLogCommand { get; }
+        
+        public TourDetailViewModel TourDetailViewModel =>
+            SelectedTour != null ? new TourDetailViewModel(SelectedTour) : null;
 
         public MainWindowViewModel()
         {

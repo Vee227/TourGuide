@@ -3,13 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:TourGuide.PresentationLayer.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid>
-        <Border BorderBrush="#BDC3C7" BorderThickness="1" CornerRadius="8" Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Border Grid.Row="0" BorderBrush="#BDC3C7" BorderThickness="1" CornerRadius="8" Padding="10">
             <ListView ItemsSource="{Binding TourLogs}"
-                      SelectedItem="{Binding TourLogViewModel.SelectedTourLog, Mode=TwoWay}"
+                      SelectedItem="{Binding SelectedTourLog, Mode=TwoWay}"
                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <ListView.View>
                     <GridView>
@@ -22,5 +27,14 @@
                 </ListView.View>
             </ListView>
         </Border>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Content="✏" Width="40" Height="40" ToolTip="Modify Tour Log" Margin="20,0,0,0"
+                    Background="#F39C12" Foreground="White"
+                    Command="{Binding ModifyTourLogCommand}"/>
+            <Button Content="🗑" Width="40" Height="40" ToolTip="Delete Tour Log" Margin="20,0,0,0"
+                    Background="#E74C3C" Foreground="White"
+                    Command="{Binding DeleteTourLogCommand}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

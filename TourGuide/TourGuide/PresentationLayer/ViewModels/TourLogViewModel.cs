@@ -12,7 +12,10 @@ namespace TourGuide.PresentationLayer.ViewModels
 {
     public class TourLogViewModel : INotifyPropertyChanged
     {
-        private static readonly string LogFilePath = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName, "tourlogs.json");
+        private static readonly string LogFilePath = Path.Combine(
+            Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName,
+            "tourlogs.json"
+        );
 
         public ObservableCollection<TourLog> TourLogs { get; set; } = new ObservableCollection<TourLog>();
 
@@ -35,7 +38,7 @@ namespace TourGuide.PresentationLayer.ViewModels
         {
             AddTourLogCommand = new RelayCommand(_ => OpenAddTourLogWindow());
             DeleteTourLogCommand = new RelayCommand(_ => DeleteTourLog(), _ => SelectedTourLog != null);
-            ModifyTourLogCommand = new RelayCommand(_ => ModifyTourLog(), _ => SelectedTourLog != null);
+            ModifyTourLogCommand = new RelayCommand(_ => OpenModifyTourLogWindow(), _ => SelectedTourLog != null);
         }
 
         public void LoadTourLogs(string? tourName)
@@ -58,7 +61,7 @@ namespace TourGuide.PresentationLayer.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error loading tour logs: {ex.Message}");
+                Console.WriteLine($"Fehler beim Laden der TourLogs: {ex.Message}");
             }
         }
 
@@ -82,21 +85,15 @@ namespace TourGuide.PresentationLayer.ViewModels
 
         public void ModifyTourLog()
         {
-            if (SelectedTourLog == null) return;
-
-            var existingLog = TourLogs.FirstOrDefault(log => log.Date == SelectedTourLog.Date);
-            if (existingLog != null)
-            {
-                existingLog.Comment = SelectedTourLog.Comment;
-                existingLog.Difficulty = SelectedTourLog.Difficulty;
-                existingLog.TotalTime = SelectedTourLog.TotalTime;
-                existingLog.Rating = SelectedTourLog.Rating;
-
-                SaveTourLogs();
-                OnPropertyChanged(nameof(TourLogs));
-            }
+            SaveTourLogs();
+            OnPropertyChanged(nameof(TourLogs));
         }
 
+        private void OpenModifyTourLogWindow()
+        {
+            var modifyWindow = new Views.ModifyTourLogView(this);
+            modifyWindow.ShowDialog();
+        }
 
         private void SaveTourLogs()
         {
@@ -107,7 +104,7 @@ namespace TourGuide.PresentationLayer.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error saving tour logs: {ex.Message}");
+                Console.WriteLine($"Fehler beim Speichern der TourLogs: {ex.Message}");
             }
         }
 

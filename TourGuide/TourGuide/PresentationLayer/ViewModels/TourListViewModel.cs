@@ -18,10 +18,10 @@ namespace TourGuide.PresentationLayer.ViewModels
     public class TourListViewModel : INotifyPropertyChanged
     {
         private static readonly string FilePath = Path.Combine(
-            Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName,"tours.json");
+            Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName, "tours.json");
 
-
-        public ObservableCollection<Tour> Tours { get; private set; } = new ObservableCollection<Tour>();
+        public ObservableCollection<Tour> Tours { get; private set; } = new();
+        public ObservableCollection<TourCardViewModel> TourCards { get; private set; } = new();
 
         private Tour _selectedTour;
         public Tour SelectedTour
@@ -49,21 +49,29 @@ namespace TourGuide.PresentationLayer.ViewModels
                 string.IsNullOrWhiteSpace(newTour.endLocation) ||
                 newTour.distance <= 0 || newTour.estimatedTime <= 0)
             {
-                throw new ArgumentException("Invalid tour data.");
+                throw new ArgumentException("Ungültige Tourdaten.");
             }
+
             Tours.Add(newTour);
+            TourCards.Add(CreateCardViewModel(newTour));
             SaveTours();
             OnPropertyChanged(nameof(Tours));
+            OnPropertyChanged(nameof(TourCards));
         }
-
 
         public void DeleteTour(Tour tour)
         {
             if (tour != null)
             {
                 Tours.Remove(tour);
+
+                var cardToRemove = TourCards.FirstOrDefault(c => c.Tour == tour);
+                if (cardToRemove != null)
+                    TourCards.Remove(cardToRemove);
+
                 SaveTours();
                 OnPropertyChanged(nameof(Tours));
+                OnPropertyChanged(nameof(TourCards));
             }
         }
 
@@ -82,14 +90,28 @@ namespace TourGuide.PresentationLayer.ViewModels
                 existingTour.distance = SelectedTour.distance;
                 existingTour.estimatedTime = SelectedTour.estimatedTime;
 
-
                 SaveTours();
+                
                 OnPropertyChanged(nameof(Tours));
+                OnPropertyChanged(nameof(TourCards));
                 OnPropertyChanged(nameof(SelectedTour));
             }
         }
 
+        private TourCardViewModel CreateCardViewModel(Tour tour)
+        {
+            return new TourCardViewModel(
+                tour,
+                new RelayCommand(_ => EditTour(tour)),
+                new RelayCommand(_ => DeleteTour(tour))
+            );
+        }
 
+        private void EditTour(Tour tour)
+        {
+            SelectedTour = tour;
+            ModifySelectedTour();
+        }
 
         public void SaveTours()
         {
@@ -112,7 +134,8 @@ namespace TourGuide.PresentationLayer.ViewModels
         {
             try
             {
-                Tours.Clear(); 
+                Tours.Clear();
+                TourCards.Clear();
 
                 if (!File.Exists(FilePath))
                 {
@@ -121,19 +144,25 @@ namespace TourGuide.PresentationLayer.ViewModels
                 }
 
                 var json = File.ReadAllText(FilePath);
-                var loadedTours = JsonSerializer.Deserialize<ObservableCollection<Tour>>(json) ?? new ObservableCollection<Tour>();
+                var loadedTours = JsonSerializer.Deserialize<ObservableCollection<Tour>>(json) ?? new();
 
                 Tours = loadedTours;
+
+                foreach (var tour in Tours)
+                {
+                    TourCards.Add(CreateCardViewModel(tour));
+                }
+
                 OnPropertyChanged(nameof(Tours));
+                OnPropertyChanged(nameof(TourCards));
             }
             catch (JsonException)
             {
-                Console.WriteLine("Error: Invalid JSON format.");
+                Console.WriteLine("Error: Ungültiges JSON Format.");
                 Tours = new ObservableCollection<Tour>();
+                TourCards = new ObservableCollection<TourCardViewModel>();
             }
         }
-
-
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
@@ -142,4 +171,3 @@ namespace TourGuide.PresentationLayer.ViewModels
         }
     }
 }
-

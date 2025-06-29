@@ -1,47 +1,46 @@
 [
   {
-    "name": "cxxfcgf",
-    "description": "dfgfsgfsgsf",
-    "startLocation": "gfdgdfgfg",
-    "endLocation": "fgfgfggsddf",
-    "transporttype": "Bike",
-    "distance": 44.56,
-    "estimatedTime": 0
-  },
-  {
+    "Id": 0,
     "name": "Testtour",
     "description": "Testing",
-    "startLocation": "Teststart",
+    "startLocation": "Teststarter",
     "endLocation": "Testend",
     "transporttype": "Hike",
     "distance": 5,
-    "estimatedTime": 200
+    "estimatedTime": 200,
+    "TourLogs": []
   },
   {
+    "Id": 0,
     "name": "Addtour",
     "description": "Addtour zum testen",
     "startLocation": "Addstart",
     "endLocation": "Addend",
     "transporttype": "Hike",
     "distance": 5,
-    "estimatedTime": 60
+    "estimatedTime": 60,
+    "TourLogs": []
   },
   {
+    "Id": 0,
     "name": "NewTour1304",
     "description": "this is for testing the new build",
     "startLocation": "Vienna",
     "endLocation": "Warsaw",
     "transporttype": "Hike",
     "distance": 40,
-    "estimatedTime": 34
+    "estimatedTime": 34,
+    "TourLogs": []
   },
   {
-    "name": "London",
-    "description": "i route around downtown",
-    "startLocation": "London Bridge",
-    "endLocation": "Big Ben",
-    "transporttype": "Hike",
-    "distance": 10,
-    "estimatedTime": 120
+    "Id": 0,
+    "name": "Nurzumtest",
+    "description": "wegenStrukur",
+    "startLocation": "Starter",
+    "endLocation": "Ender",
+    "transporttype": "Run",
+    "distance": 4,
+    "estimatedTime": 30,
+    "TourLogs": []
   }
 ]
