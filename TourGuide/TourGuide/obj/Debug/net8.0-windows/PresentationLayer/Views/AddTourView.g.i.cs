@@ -52,7 +52,7 @@ namespace TourGuide.PresentationLayer.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TourGuide;component/presentationlayer/views/addtourview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TourGuide;V1.0.0.0;component/presentationlayer/views/addtourview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\PresentationLayer\Views\AddTourView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
