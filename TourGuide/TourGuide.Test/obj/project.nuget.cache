@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CQ7osRcbcrw=",
+  "dgSpecHash": "IaOuXfNpJRk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Besitzer\\Desktop\\SWENStructureCheck\\TourGuide\\TourGuide\\TourGuide.Test\\TourGuide.Test.csproj",
+  "projectFilePath": "C:\\Users\\Besitzer\\Desktop\\FHTechnikum\\Semester4\\TourGuide\\TourGuide\\TourGuide\\TourGuide.Test\\TourGuide.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Besitzer\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\Besitzer\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",

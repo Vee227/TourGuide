@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+QPlH9Sym4Y=",
+  "dgSpecHash": "6+Q9rai3VMg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Besitzer\\Desktop\\SWENStructureCheck\\TourGuide\\TourGuide\\TourGuide\\TourGuide.csproj",
+  "projectFilePath": "C:\\Users\\Besitzer\\Desktop\\FHTechnikum\\Semester4\\TourGuide\\TourGuide\\TourGuide\\TourGuide\\TourGuide.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Besitzer\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Besitzer\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
