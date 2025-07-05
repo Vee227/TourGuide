@@ -8,8 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d230cb5d-8d5d-4c50-86d9-b20d9000717f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TourGuide/DataLayer/Repositories/SearchRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TourGuide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TourGuide/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/UnitTest1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/CoverletSourceRootsMapping_TourGuide.Test" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/CoverletSourceRootsMapping_TourGuide.Test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfoInputs.cache" afterDir="false" />
@@ -17,22 +17,36 @@
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/SearchViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/SearchViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/Views/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/Views/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/Views/SearchView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/Views/SearchView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/DataLayer/Models/Tour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/DataLayer/Models/Tour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/AddTourViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/AddTourViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/MainWindowViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/TourCardViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/TourCardViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/TourDetailViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/TourDetailViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/TourListViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/TourListViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/Views/TourDetailView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/Views/TourDetailView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/TourGuide.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/TourGuide.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.exe" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/App.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/GeneratedInternalTypeHelper.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/GeneratedInternalTypeHelper.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Controls/TourCard.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Controls/TourCard.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/AddTourLogView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/AddTourLogView.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/AddTourView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/AddTourView.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/MainWindow.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/ModifyTourLogView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/ModifyTourLogView.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/SearchView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/SearchView.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/TourDetailView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/TourDetailView.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/TourListView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/TourListView.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/TourLogView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/TourLogView.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.dll" afterDir="false" />
@@ -44,8 +58,10 @@
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/ref/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/ref/TourGuide.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/refint/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/refint/TourGuide.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/TourGuide.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/TourGuide.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/TourGuide.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/TourGuide.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/tours.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/tours.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +151,9 @@
       <workItem from="1744551917289" duration="889000" />
       <workItem from="1744552833157" duration="3627000" />
       <workItem from="1751152428061" duration="9568000" />
-      <workItem from="1751318196026" duration="5498000" />
+      <workItem from="1751318196026" duration="5680000" />
+      <workItem from="1751674992812" duration="8119000" />
+      <workItem from="1751696844806" duration="7178000" />
     </task>
     <task id="LOCAL-00001" summary="switching to rider">
       <option name="closed" value="true" />
@@ -161,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744564297368</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Preparations for the Searchbar with DB Access">
+      <option name="closed" value="true" />
+      <created>1751324033336</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751324033336</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +195,14 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.EntityFrameworkCore.Abstractions" />
+    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.EntityFrameworkCore.Relational" />
+    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.ApplicationInsights" />
+    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.EntityFrameworkCore" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -186,6 +220,7 @@
     <MESSAGE value="Last changes before the intermediate handin. Cleanup" />
     <MESSAGE value="rider switch" />
     <MESSAGE value="isolation of code in different files, fixing small problems with rating/difficulty changes in AddTour and AddTourLog" />
-    <option name="LAST_COMMIT_MESSAGE" value="isolation of code in different files, fixing small problems with rating/difficulty changes in AddTour and AddTourLog" />
+    <MESSAGE value="Preparations for the Searchbar with DB Access" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preparations for the Searchbar with DB Access" />
   </component>
 </project>

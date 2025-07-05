@@ -8,6 +8,8 @@ using System.Windows.Input;
 using System.Windows;
 using TourGuide.DataLayer.Models;
 using TourGuide.PresentationLayer.Comands;
+using TourGuide.DataLayer.Repositories;
+using TourGuide.DataLayer;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
@@ -21,8 +23,6 @@ namespace TourGuide.PresentationLayer.ViewModels
         public List<string> TransportTypes { get; } = new List<string> { "Bike", "Hike", "Run", "Rollerskates" };
         public Action CloseWindow { get; set; }
 
-
-
         public ICommand SaveTourCommand { get; }
 
         private readonly TourListViewModel _tourListVM;
@@ -33,35 +33,36 @@ namespace TourGuide.PresentationLayer.ViewModels
             SaveTourCommand = new RelayCommand(_ => SaveTour());
         }
 
-        private void SaveTour()
+        //Damit fügen wir eine neue Tour ein - validiert - stellt Verbindung mit DB her und 
+        //fügt das mit Repository ein - updatet UI und schließt das Fenster wieder.
+        public async void SaveTour()
         {
-            MessageBox.Show($"Debug Info:\n" +
-                    $"Name: {NewTour.name}\n" +
-                    $"Description: {NewTour.description}\n" +
-                    $"Start: {NewTour.startLocation}\n" +
-                    $"End: {NewTour.endLocation}\n" +
-                    $"Transport: {NewTour.transporttype}\n" +
-                    $"Distance: {NewTour.distance}\n" +
-                    $"Time: {NewTour.estimatedTime}",
-                    "Debugging", MessageBoxButton.OK, MessageBoxImage.Information);
-
             if (string.IsNullOrWhiteSpace(NewTour.name) ||
-                string.IsNullOrWhiteSpace(NewTour.description) ||
                 string.IsNullOrWhiteSpace(NewTour.startLocation) ||
                 string.IsNullOrWhiteSpace(NewTour.endLocation) ||
-                string.IsNullOrWhiteSpace(NewTour.transporttype) || 
-                NewTour.distance <= 0 ||
-                NewTour.estimatedTime <= 0)
+                NewTour.distance <= 0 || NewTour.estimatedTime <= 0)
             {
                 MessageBox.Show("Please fill all fields correctly.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            _tourListVM.AddTour(NewTour);
-            MessageBox.Show("Tour added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            try
+            {
+                var factory = new TourPlannerContextFactory();
+                using var context = factory.CreateDbContext(null);
+                var repository = new TourRepository(context);
+                await repository.AddTourAsync(NewTour);
 
-            CloseWindow?.Invoke();
+                _tourListVM.Tours.Add(NewTour);
+                _tourListVM.TourCards.Add(_tourListVM.CreateCardViewModel(NewTour));
+
+                MessageBox.Show("Tour added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                CloseWindow?.Invoke();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving the tour: " + ex.Message);
+            }
         }
-
     }
 }

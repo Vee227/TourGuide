@@ -7,6 +7,7 @@ using System.Windows.Input;
 using TourGuide.PresentationLayer.Comands;
 using TourGuide.DataLayer.Models;
 using TourGuide.PresentationLayer.Views;
+using System.Windows;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
@@ -66,8 +67,7 @@ namespace TourGuide.PresentationLayer.ViewModels
         public MainWindowViewModel()
         {
             _tourListViewModel = new TourListViewModel();
-            TourLogViewModel = new TourLogViewModel();
-
+            
             AddTourCommand = new RelayCommand(_ => OpenAddTourWindow());
             DeleteTourCommand = new RelayCommand(_ => DeleteTour(), _ => SelectedTour != null);
             ModifyTourCommand = new RelayCommand(_ => ModifyTour(), _ => SelectedTour != null);
@@ -102,15 +102,22 @@ namespace TourGuide.PresentationLayer.ViewModels
             TourLogViewModel.DeleteTourLog();
         }
 
+        
         private void ModifyTour()
         {
-            if (SelectedTour != null)
+            if (SelectedTour == null) return;
+            
+            var tourInList = TourListViewModel.Tours.FirstOrDefault(t => t.Id == SelectedTour.Id);
+            if (tourInList != null)
             {
-                _tourListViewModel.ModifySelectedTour();
-                _tourListViewModel.SaveTours();
-                OnPropertyChanged(nameof(TourListViewModel.Tours));
+                TourListViewModel.SelectedTour = tourInList;
+                TourListViewModel.ModifySelectedTour();
             }
+
+            OnPropertyChanged(nameof(TourListViewModel.Tours));
         }
+
+
 
         private void OpenModifyTourLogWindow()
         {

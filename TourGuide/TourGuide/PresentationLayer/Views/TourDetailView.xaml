@@ -6,8 +6,10 @@
              xmlns:local="clr-namespace:TourGuide.PresentationLayer.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Height="Auto" Width="Auto">
+
     <Grid Margin="20">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -21,21 +23,28 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="Tour Name:" Grid.Row="0" Grid.Column="0" FontWeight="Bold"/>
-        <TextBox Text="{Binding SelectedTour.name, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" Margin="10,0,0,0"/>
+        <TextBox Text="{Binding SelectedTour.name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="10,0,0,5"/>
 
         <TextBlock Text="Description:" Grid.Row="1" Grid.Column="0" FontWeight="Bold"/>
-        <TextBox Text="{Binding SelectedTour.description, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Margin="10,0,0,0"/>
+        <TextBox Text="{Binding SelectedTour.description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" Margin="10,0,0,5"/>
 
         <TextBlock Text="Start Location:" Grid.Row="2" Grid.Column="0" FontWeight="Bold"/>
-        <TextBox Text="{Binding SelectedTour.startLocation, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" Margin="10,0,0,0"/>
+        <TextBox Text="{Binding SelectedTour.startLocation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" Margin="10,0,0,5"/>
 
         <TextBlock Text="End Location:" Grid.Row="3" Grid.Column="0" FontWeight="Bold"/>
-        <TextBox Text="{Binding SelectedTour.endLocation, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" Margin="10,0,0,0"/>
+        <TextBox Text="{Binding SelectedTour.endLocation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1" Margin="10,0,0,5"/>
 
         <TextBlock Text="Transport Type:" Grid.Row="4" Grid.Column="0" FontWeight="Bold"/>
-        <TextBox Text="{Binding SelectedTour.transporttype, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" Margin="10,0,0,0"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" Margin="10,0,0,5"
+                  ItemsSource="{Binding TransportTypes}"
+                  SelectedItem="{Binding SelectedTour.transporttype, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  IsEditable="False"
+                  IsReadOnly="True"/>
 
         <TextBlock Text="Distance:" Grid.Row="5" Grid.Column="0" FontWeight="Bold"/>
-        <TextBox Text="{Binding SelectedTour.distance, Mode=TwoWay}" Grid.Row="5" Grid.Column="1" Margin="10,0,0,0"/>
+        <TextBox Text="{Binding SelectedTour.distance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="1" Margin="10,0,0,5"/>
+
+        <TextBlock Text="Estimated Time:" Grid.Row="6" Grid.Column="0" FontWeight="Bold"/>
+        <TextBox Text="{Binding SelectedTour.estimatedTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="6" Grid.Column="1" Margin="10,0,0,0"/>
     </Grid>
 </UserControl>

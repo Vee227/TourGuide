@@ -1,46 +1,13 @@
 [
   {
-    "Id": 0,
-    "name": "Testtour",
-    "description": "Testing",
-    "startLocation": "Teststarter",
-    "endLocation": "Testend",
-    "transporttype": "Hike",
+    "Id": 1,
+    "name": "Test1",
+    "description": "Test",
+    "startLocation": "Anfang",
+    "endLocation": "ende",
+    "transporttype": "Bike",
     "distance": 5,
-    "estimatedTime": 200,
-    "TourLogs": []
-  },
-  {
-    "Id": 0,
-    "name": "Addtour",
-    "description": "Addtour zum testen",
-    "startLocation": "Addstart",
-    "endLocation": "Addend",
-    "transporttype": "Hike",
-    "distance": 5,
-    "estimatedTime": 60,
-    "TourLogs": []
-  },
-  {
-    "Id": 0,
-    "name": "NewTour1304",
-    "description": "this is for testing the new build",
-    "startLocation": "Vienna",
-    "endLocation": "Warsaw",
-    "transporttype": "Hike",
-    "distance": 40,
-    "estimatedTime": 34,
-    "TourLogs": []
-  },
-  {
-    "Id": 0,
-    "name": "Nurzumtest",
-    "description": "wegenStrukur",
-    "startLocation": "Starter",
-    "endLocation": "Ender",
-    "transporttype": "Run",
-    "distance": 4,
-    "estimatedTime": 30,
+    "estimatedTime": 55,
     "TourLogs": []
   }
 ]

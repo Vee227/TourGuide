@@ -24,15 +24,6 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column = "0" Text="Tours" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"
                        Foreground="#34495E"/>
-            <!-- Das brauchen wir eigentlich nicht mehr da wir die Searchbar ausgelagert haben aber 
-            ich lass es trotzdem nochmal drin - nur vorsichtshalber (es funkktioniert aber von der Optik her mal) -->
-            <!-- <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
-                 <TextBox Width="180" Height="30" Margin="0,0,5,0" Padding="5"
-                         Background="White" BorderBrush="#BDC3C7" HorizontalAlignment="Stretch"/>
-                <Button Content="🔍" Width="35" Height="30" ToolTip="Search"
-                        Background="#3498DB" Foreground="White" 
-                        BorderThickness="0" Cursor="Hand"/>
-                </StackPanel> -->
                 <local:SearchView Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Margin="10"/>
             
         </Grid>

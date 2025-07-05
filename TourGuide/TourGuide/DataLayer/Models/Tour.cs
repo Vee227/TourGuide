@@ -1,44 +1,87 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
+
 
 namespace TourGuide.DataLayer.Models
 {
-   public class Tour
+    public class Tour : INotifyPropertyChanged
     {
         public int Id { get; set; }
 
-        public string name { get; set; } = string.Empty;        
-        public string description { get; set; } = string.Empty; 
-        public string startLocation { get; set; } = string.Empty;
-        public string endLocation { get; set; } = string.Empty;
-        public string transporttype { get; set; } = string.Empty;
-        public double distance { get; set; }
-        public int estimatedTime { get; set; }
-
-        public ICollection<TourLog> TourLogs { get; set; } = new List<TourLog>();
-
-        public Tour() { }
-
-        public Tour(string name, string description, string startLocation, string endLocation, string transportType, double distance, int estimatedTime)
+        private string _name;
+        public string name
         {
-            this.name = name;
-            this.description = description;
-            this.startLocation = startLocation;
-            this.endLocation = endLocation;
-            this.transporttype = transportType;
-            this.distance = distance;
-            this.estimatedTime = estimatedTime;
+            get => _name;
+            set => SetField(ref _name, value);
         }
 
+        private string _description;
+        public string description
+        {
+            get => _description;
+            set => SetField(ref _description, value);
+        }
+
+        private string _startLocation;
+        public string startLocation
+        {
+            get => _startLocation;
+            set => SetField(ref _startLocation, value);
+        }
+
+        private string _endLocation;
+        public string endLocation
+        {
+            get => _endLocation;
+            set => SetField(ref _endLocation, value);
+        }
+
+        private string _transporttype;
+        public string transporttype
+        {
+            get => _transporttype;
+            set => SetField(ref _transporttype, value);
+        }
+
+        private double _distance;
+        public double distance
+        {
+            get => _distance;
+            set => SetField(ref _distance, value);
+        }
+
+        private double _estimatedTime;
+        public double estimatedTime
+        {
+            get => _estimatedTime;
+            set => SetField(ref _estimatedTime, value);
+        }
+
+        public virtual ICollection<TourLog> TourLogs { get; set; } = new List<TourLog>();
+        
         public override string ToString()
         {
-            return name;
+            return $"{name}";
         }
 
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected bool SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
+        {
+            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+            field = value;
+            OnPropertyChanged(propertyName);
+            return true;
+        }
     }
-
-
 }

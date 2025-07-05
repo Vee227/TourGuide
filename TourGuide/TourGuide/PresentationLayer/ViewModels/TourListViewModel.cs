@@ -8,18 +8,16 @@ using TourGuide.PresentationLayer.ViewModels;
 using TourGuide.DataLayer.Models;
 using TourGuide.PresentationLayer.Controls;
 using System.ComponentModel;
-using System.IO;
-using System.Text.Json;
 using System.Windows.Input;
 using TourGuide.PresentationLayer.Comands;
+using TourGuide.DataLayer;
+using TourGuide.DataLayer.Repositories;
+
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
     public class TourListViewModel : INotifyPropertyChanged
     {
-        private static readonly string FilePath = Path.Combine(
-            Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName, "tours.json");
-
         public ObservableCollection<Tour> Tours { get; private set; } = new();
         public ObservableCollection<TourCardViewModel> TourCards { get; private set; } = new();
 
@@ -41,64 +39,59 @@ namespace TourGuide.PresentationLayer.ViewModels
             LoadTours();
             ModifyTourCommand = new RelayCommand(_ => ModifySelectedTour(), _ => SelectedTour != null);
         }
-
-        public void AddTour(Tour newTour)
+        
+        public async void DeleteTour(Tour tour)
         {
-            if (string.IsNullOrWhiteSpace(newTour.name) ||
-                string.IsNullOrWhiteSpace(newTour.startLocation) ||
-                string.IsNullOrWhiteSpace(newTour.endLocation) ||
-                newTour.distance <= 0 || newTour.estimatedTime <= 0)
-            {
-                throw new ArgumentException("Ungültige Tourdaten.");
-            }
+            if (tour == null) return;
 
-            Tours.Add(newTour);
-            TourCards.Add(CreateCardViewModel(newTour));
-            SaveTours();
-            OnPropertyChanged(nameof(Tours));
-            OnPropertyChanged(nameof(TourCards));
-        }
-
-        public void DeleteTour(Tour tour)
-        {
-            if (tour != null)
+            try
             {
+                var factory = new TourPlannerContextFactory();
+                using var context = factory.CreateDbContext(null);
+                var repository = new TourRepository(context);
+
+                await repository.DeleteTourAsync(tour.Id);
+
                 Tours.Remove(tour);
 
                 var cardToRemove = TourCards.FirstOrDefault(c => c.Tour == tour);
                 if (cardToRemove != null)
                     TourCards.Remove(cardToRemove);
 
-                SaveTours();
                 OnPropertyChanged(nameof(Tours));
                 OnPropertyChanged(nameof(TourCards));
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting the tour: {ex.Message}");
+            }
         }
-
-        public void ModifySelectedTour()
+        
+        
+        public async void ModifySelectedTour()
         {
             if (SelectedTour == null) return;
 
-            var existingTour = Tours.FirstOrDefault(t => t.name == SelectedTour.name);
-            if (existingTour != null)
+            try
             {
-                existingTour.name = SelectedTour.name;
-                existingTour.description = SelectedTour.description;
-                existingTour.startLocation = SelectedTour.startLocation;
-                existingTour.endLocation = SelectedTour.endLocation;
-                existingTour.transporttype = SelectedTour.transporttype;
-                existingTour.distance = SelectedTour.distance;
-                existingTour.estimatedTime = SelectedTour.estimatedTime;
+                var factory = new TourPlannerContextFactory();
+                using var context = factory.CreateDbContext(null);
+                var repository = new TourRepository(context);
 
-                SaveTours();
+                await repository.UpdateTourAsync(SelectedTour);
+                Console.WriteLine("Tour saved");
                 
-                OnPropertyChanged(nameof(Tours));
-                OnPropertyChanged(nameof(TourCards));
-                OnPropertyChanged(nameof(SelectedTour));
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Saving the tour failed: {ex.Message}");
+            }
+
+            OnPropertyChanged(nameof(Tours));
+            OnPropertyChanged(nameof(TourCards));
         }
 
-        private TourCardViewModel CreateCardViewModel(Tour tour)
+        public TourCardViewModel CreateCardViewModel(Tour tour)
         {
             return new TourCardViewModel(
                 tour,
@@ -113,56 +106,31 @@ namespace TourGuide.PresentationLayer.ViewModels
             ModifySelectedTour();
         }
 
-        public void SaveTours()
-        {
-            try
-            {
-                var json = JsonSerializer.Serialize(Tours, new JsonSerializerOptions
-                {
-                    WriteIndented = true,
-                    NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowNamedFloatingPointLiterals
-                });
-                File.WriteAllText(FilePath, json);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Fehler beim Speichern der Touren: {ex.Message}");
-            }
-        }
+       
+       public async void LoadTours()
+       {
+           try
+           {
+               var factory = new TourPlannerContextFactory();
+               using var context = factory.CreateDbContext(null);
+               var repository = new TourRepository(context);
 
-        public void LoadTours()
-        {
-            try
-            {
-                Tours.Clear();
-                TourCards.Clear();
+               var loadedTours = await repository.GetAllToursAsync();
+               Tours = new ObservableCollection<Tour>(loadedTours);
 
-                if (!File.Exists(FilePath))
-                {
-                    Tours = new ObservableCollection<Tour>();
-                    return;
-                }
+               TourCards.Clear();
+               foreach (var tour in Tours)
+                   TourCards.Add(CreateCardViewModel(tour));
 
-                var json = File.ReadAllText(FilePath);
-                var loadedTours = JsonSerializer.Deserialize<ObservableCollection<Tour>>(json) ?? new();
+               OnPropertyChanged(nameof(Tours));
+               OnPropertyChanged(nameof(TourCards));
+           }
+           catch (Exception ex)
+           {
+               Console.WriteLine($"Fehler beim Laden der Touren: {ex.Message}");
+           }
+       }
 
-                Tours = loadedTours;
-
-                foreach (var tour in Tours)
-                {
-                    TourCards.Add(CreateCardViewModel(tour));
-                }
-
-                OnPropertyChanged(nameof(Tours));
-                OnPropertyChanged(nameof(TourCards));
-            }
-            catch (JsonException)
-            {
-                Console.WriteLine("Error: Ungültiges JSON Format.");
-                Tours = new ObservableCollection<Tour>();
-                TourCards = new ObservableCollection<TourCardViewModel>();
-            }
-        }
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
