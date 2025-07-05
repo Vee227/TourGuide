@@ -40,8 +40,8 @@ namespace TourGuide.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("estimatedTime")
-                        .HasColumnType("integer");
+                    b.Property<double>("estimatedTime")
+                        .HasColumnType("double precision");
 
                     b.Property<string>("name")
                         .IsRequired()
