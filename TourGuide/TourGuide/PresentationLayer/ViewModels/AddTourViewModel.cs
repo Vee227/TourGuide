@@ -52,9 +52,8 @@ namespace TourGuide.PresentationLayer.ViewModels
                 using var context = factory.CreateDbContext(null);
                 var repository = new TourRepository(context);
                 await repository.AddTourAsync(NewTour);
-
-                _tourListVM.Tours.Add(NewTour);
-                _tourListVM.TourCards.Add(_tourListVM.CreateCardViewModel(NewTour));
+                
+                _tourListVM.LoadTours();
 
                 MessageBox.Show("Tour added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 CloseWindow?.Invoke();

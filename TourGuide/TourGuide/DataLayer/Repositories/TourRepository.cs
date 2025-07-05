@@ -19,35 +19,49 @@ namespace TourGuide.DataLayer.Repositories
 
         public async Task<IEnumerable<Tour>> GetAllToursAsync()
         {
-            return await _context.Tours.Include(t => t.TourLogs).ToListAsync();
+            return await _context.Tours
+                .FromSqlInterpolated($"SELECT * FROM \"Tours\"")
+                .ToListAsync();
         }
 
         public async Task<Tour> GetTourByIdAsync(int id)
         {
-            return await _context.Tours.Include(t => t.TourLogs)
-                                       .FirstOrDefaultAsync(t => t.Id == id);
+            return await _context.Tours
+                .FromSqlInterpolated($"SELECT * FROM \"Tours\" WHERE \"Id\" = {id}")
+                .FirstOrDefaultAsync();
         }
 
         public async Task AddTourAsync(Tour tour)
         {
-            await _context.Tours.AddAsync(tour);
-            await _context.SaveChangesAsync();
+            await _context.Database.ExecuteSqlInterpolatedAsync($@"
+                INSERT INTO ""Tours""
+                    (""name"", ""description"", ""startLocation"", ""endLocation"", ""transporttype"", ""distance"", ""estimatedTime"")
+                VALUES
+                    ({tour.name}, {tour.description}, {tour.startLocation}, {tour.endLocation},
+                     {tour.transporttype}, {tour.distance}, {tour.estimatedTime});
+            ");
         }
 
         public async Task UpdateTourAsync(Tour tour)
         {
-            _context.Tours.Update(tour);
-            await _context.SaveChangesAsync();
+            await _context.Database.ExecuteSqlInterpolatedAsync($@"
+                UPDATE ""Tours"" SET
+                    ""name"" = {tour.name},
+                    ""description"" = {tour.description},
+                    ""startLocation"" = {tour.startLocation},
+                    ""endLocation"" = {tour.endLocation},
+                    ""transporttype"" = {tour.transporttype},
+                    ""distance"" = {tour.distance},
+                    ""estimatedTime"" = {tour.estimatedTime}
+                WHERE ""Id"" = {tour.Id};
+            ");
         }
 
         public async Task DeleteTourAsync(int id)
         {
-            var tour = await _context.Tours.FindAsync(id);
-            if (tour != null)
-            {
-                _context.Tours.Remove(tour);
-                await _context.SaveChangesAsync();
-            }
+            await _context.Database.ExecuteSqlInterpolatedAsync($@"
+                DELETE FROM ""Tours"" WHERE ""Id"" = {id};
+            ");
         }
     }
 }
