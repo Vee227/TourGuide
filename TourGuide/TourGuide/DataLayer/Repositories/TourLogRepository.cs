@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TourGuide.DataLayer.Models;
+using TourGuide.Logs;
+using log4net;
 
 namespace TourGuide.DataLayer.Repositories
 {
@@ -32,6 +34,7 @@ namespace TourGuide.DataLayer.Repositories
                 VALUES 
                     ({log.TourId}, {log.Date}, {log.Comment}, {log.Difficulty}, {log.TotalTime}, {log.Rating});
             ");
+            LoggerHelper.Info($"Added TourLog for Tour ID {log.TourId} on {log.Date}.");
         }
 
         public async Task DeleteTourLogAsync(int id)
@@ -39,6 +42,7 @@ namespace TourGuide.DataLayer.Repositories
             await _context.Database.ExecuteSqlInterpolatedAsync($@"
                 DELETE FROM ""TourLogs"" WHERE ""Id"" = {id};
             ");
+            LoggerHelper.Info($"Deleted TourLog ID {id}.");
         }
 
         public async Task UpdateTourLogAsync(TourLog log)
@@ -52,6 +56,14 @@ namespace TourGuide.DataLayer.Repositories
                     ""Rating"" = {log.Rating}
                 WHERE ""Id"" = {log.Id};
             ");
+            LoggerHelper.Info($"Updated TourLog ID {log.Id} for Tour ID {log.TourId}.");
         }
+        
+        public async Task<Dictionary<int, List<TourLog>>> GetAllLogsGroupedByTourAsync()
+        {
+            var logs = await _context.TourLogs.FromSqlInterpolated($@"SELECT * FROM ""TourLogs""").ToListAsync();
+            return logs.GroupBy(l => l.TourId).ToDictionary(g => g.Key, g => g.ToList());
+        }
+
     }
 }

@@ -9,6 +9,8 @@ using TourGuide.PresentationLayer.Comands;
 using TourGuide.DataLayer.Models;
 using TourGuide.DataLayer.Repositories;
 using TourGuide.DataLayer;
+using TourGuide.Logs;
+using log4net;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
@@ -53,10 +55,12 @@ namespace TourGuide.PresentationLayer.ViewModels
                 var logs = await repo.GetLogsByTourIdAsync(tourId);
                 TourLogs = new ObservableCollection<TourLog>(logs);
                 OnPropertyChanged(nameof(TourLogs));
+                LoggerHelper.Info($"Loaded {TourLogs.Count} logs for Tour ID {tourId}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Fehler beim Laden der TourLogs: {ex.Message}");
+                LoggerHelper.Error($"Failed to load tour logs for Tour ID {tourId}", ex);
+                Console.WriteLine($"Error while loading TourLogs: {ex.Message}");
             }
         }
 
@@ -74,10 +78,12 @@ namespace TourGuide.PresentationLayer.ViewModels
                 TourLogs.Remove(SelectedTourLog);
                 SelectedTourLog = null;
                 OnPropertyChanged(nameof(TourLogs));
+                LoggerHelper.Info($"Deleted TourLog ID {SelectedTourLog?.Id} (Tour ID {_currentTourId})");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Fehler beim Löschen des TourLogs: {ex.Message}");
+                LoggerHelper.Error($"Failed to delete TourLog ID {SelectedTourLog?.Id}", ex);
+                Console.WriteLine($"Error while deleting TourLogs: {ex.Message}");
             }
         }
 
@@ -89,12 +95,14 @@ namespace TourGuide.PresentationLayer.ViewModels
         private void OpenModifyTourLogWindow()
         {
             var modifyWindow = new Views.ModifyTourLogView(this);
+            LoggerHelper.Info($"Opened ModifyTourLog window for Log ID {SelectedTourLog?.Id}");
             modifyWindow.ShowDialog();
         }
 
         private void OpenAddTourLogWindow()
         {
             var addTourLogWindow = new Views.AddTourLogView(this, _currentTourId);
+            LoggerHelper.Info($"Opened AddTourLog window (Tour ID {_currentTourId})");
             addTourLogWindow.ShowDialog();
         }
 

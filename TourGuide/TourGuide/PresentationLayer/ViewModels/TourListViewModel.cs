@@ -12,7 +12,8 @@ using System.Windows.Input;
 using TourGuide.PresentationLayer.Comands;
 using TourGuide.DataLayer;
 using TourGuide.DataLayer.Repositories;
-
+using log4net;
+using TourGuide.Logs;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
@@ -63,9 +64,12 @@ namespace TourGuide.PresentationLayer.ViewModels
 
                 OnPropertyChanged(nameof(Tours));
                 OnPropertyChanged(nameof(TourCards));
+                
+                LoggerHelper.Info($"Tour '{tour.name}' deleted (ID: {tour.Id}).");
             }
             catch (Exception ex)
             {
+                LoggerHelper.Error($"Failed to delete tour '{tour?.name}'", ex);
                 Console.WriteLine($"Error deleting the tour: {ex.Message}");
             }
         }
@@ -81,10 +85,12 @@ namespace TourGuide.PresentationLayer.ViewModels
                 var repository = new TourRepository(context);
 
                 await repository.UpdateTourAsync(SelectedTour);
+                LoggerHelper.Info($"Tour '{SelectedTour.name}' updated (ID: {SelectedTour.Id}).");
                 Console.WriteLine("Tour saved");
             }
             catch (Exception ex)
             {
+                LoggerHelper.Error($"Failed to update tour '{SelectedTour?.name}'", ex);
                 Console.WriteLine($"Saving the tour failed: {ex.Message}");
             }
 
@@ -129,9 +135,12 @@ namespace TourGuide.PresentationLayer.ViewModels
 
                 OnPropertyChanged(nameof(Tours));
                 OnPropertyChanged(nameof(TourCards));
+                
+                LoggerHelper.Info($"Loaded {Tours.Count} tours from database.");
             }
             catch (Exception ex)
             {
+                LoggerHelper.Error("Failed to load tours from database.", ex);
                 Console.WriteLine($"Failed to load tours: {ex.Message}");
             }
         }

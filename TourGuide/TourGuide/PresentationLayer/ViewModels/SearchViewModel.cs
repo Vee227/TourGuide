@@ -8,6 +8,8 @@ using System.ComponentModel;
 using TourGuide.DataLayer.Repositories;
 using TourGuide.DataLayer.Models;
 using System.Collections.ObjectModel;
+using TourGuide.Logs;
+using log4net;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
@@ -37,14 +39,22 @@ namespace TourGuide.PresentationLayer.ViewModels
 
         private void PerformSearch()
         {
-            var repo = new SearchRepository();
-
-            var filtered = repo.FilterTours(_tourListViewModel.AllTours, SearchInput);
-
-            _tourListViewModel.Tours.Clear();
-            foreach (var tour in filtered)
+            try
             {
-                _tourListViewModel.Tours.Add(tour);
+                var repo = new SearchRepository();
+                var filtered = repo.FilterTours(_tourListViewModel.AllTours, SearchInput);
+
+                _tourListViewModel.Tours.Clear();
+                foreach (var tour in filtered)
+                {
+                    _tourListViewModel.Tours.Add(tour);
+                }
+
+                LoggerHelper.Info($"Search triggered: \"{SearchInput}\" → {filtered.Count()} of {_tourListViewModel.AllTours.Count} tours matched.");
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Error("Error while performing search.", ex);
             }
         }
 
