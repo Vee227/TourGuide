@@ -18,3 +18,7 @@ obj/
 
 # Ignore Debug folders (if needed)
 **/Debug/
+
+# Ignore appsettings.json cause of sensitive data
+appsettings.json
+
