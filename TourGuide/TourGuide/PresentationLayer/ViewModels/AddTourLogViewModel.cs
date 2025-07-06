@@ -7,6 +7,8 @@ using TourGuide.PresentationLayer.Comands;
 using TourGuide.DataLayer;
 using TourGuide.DataLayer.Repositories;
 using System.Globalization;
+using log4net;
+using TourGuide.Logs;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
@@ -38,30 +40,35 @@ namespace TourGuide.PresentationLayer.ViewModels
         {
             if (!DateTime.TryParseExact(Date, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
             {
+                LoggerHelper.Warn("Invalid date format in AddTourLog.");
                 MessageBox.Show("Please enter a valid date in format YYYY-MM-DD.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(Comment))
             {
+                LoggerHelper.Warn("Empty comment in AddTourLog.");
                 MessageBox.Show("Comment cannot be empty.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
             if (Difficulty is null or < 1 or > 5)
             {
+                LoggerHelper.Warn("Invalid difficulty in AddTourLog.");
                 MessageBox.Show("Please select a valid difficulty (1–5).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
             if (TotalTime is null or <= 0)
             {
+                LoggerHelper.Warn("Invalid total time in AddTourLog.");
                 MessageBox.Show("Total time must be a positive number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
             if (Rating is null or < 1 or > 5)
             {
+                LoggerHelper.Warn("Invalid rating in AddTourLog.");
                 MessageBox.Show("Please select a valid rating (1–5).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
@@ -82,12 +89,15 @@ namespace TourGuide.PresentationLayer.ViewModels
                 using var context = factory.CreateDbContext(null);
                 var repo = new TourLogRepository(context);
                 await repo.AddTourLogAsync(newLog);
+                
+                LoggerHelper.Info($"TourLog added: Date={Date}, Rating={Rating}, TourId={_tourId}");
 
                 _tourLogViewModel.LoadTourLogs(_tourId);
                 CloseWindow?.Invoke();
             }
             catch (Exception ex)
             {
+                LoggerHelper.Error("Error saving TourLog in AddTourLogViewModel.", ex);
                 MessageBox.Show($"Error saving tour log: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }

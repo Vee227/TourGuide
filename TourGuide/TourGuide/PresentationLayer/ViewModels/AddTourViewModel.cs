@@ -10,6 +10,8 @@ using TourGuide.DataLayer.Models;
 using TourGuide.PresentationLayer.Comands;
 using TourGuide.DataLayer.Repositories;
 using TourGuide.DataLayer;
+using log4net;
+using TourGuide.Logs;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
@@ -43,6 +45,7 @@ namespace TourGuide.PresentationLayer.ViewModels
                 NewTour.distance <= 0 || NewTour.estimatedTime <= 0)
             {
                 MessageBox.Show("Please fill all fields correctly.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                LoggerHelper.Warn("Tour validation failed. Tour not saved.");
                 return;
             }
 
@@ -55,11 +58,13 @@ namespace TourGuide.PresentationLayer.ViewModels
                 
                 _tourListVM.LoadTours();
 
+                LoggerHelper.Info($"Tour '{NewTour.name}' created (Start: {NewTour.startLocation}, Destination: {NewTour.endLocation}).");
                 MessageBox.Show("Tour added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 CloseWindow?.Invoke();
             }
             catch (Exception ex)
             {
+                LoggerHelper.Error("Error while saving new tour.", ex);
                 MessageBox.Show("Error saving the tour: " + ex.Message);
             }
         }

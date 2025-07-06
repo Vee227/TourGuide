@@ -8,6 +8,8 @@ using TourGuide.PresentationLayer.Comands;
 using TourGuide.DataLayer.Models;
 using TourGuide.PresentationLayer.Views;
 using System.Windows;
+using log4net;
+using TourGuide.Logs;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
@@ -23,7 +25,10 @@ namespace TourGuide.PresentationLayer.ViewModels
                 OnPropertyChanged(nameof(CurrentView));
             }
         }
+        
+        private static readonly ILog log = LogManager.GetLogger(typeof(MainWindowViewModel));
 
+        
         private Tour _selectedTour;
         public Tour SelectedTour
         {
@@ -37,6 +42,7 @@ namespace TourGuide.PresentationLayer.ViewModels
                     OnPropertyChanged(nameof(TourDetailViewModel)); 
                     if (_selectedTour != null)
                     {
+                        LoggerHelper.Info($"Selected tour changed: {_selectedTour.name} (ID: {_selectedTour.Id})");
                         TourLogViewModel.LoadTourLogs(_selectedTour.Id);
                     }
                     OnPropertyChanged(nameof(TourLogViewModel.TourLogs));
@@ -81,6 +87,8 @@ namespace TourGuide.PresentationLayer.ViewModels
             AddTourLogCommand = new RelayCommand(_ => OpenAddTourLogWindow(), _ => SelectedTour != null);
             DeleteTourLogCommand = new RelayCommand(_ => DeleteTourLog(), _ => TourLogViewModel.SelectedTourLog != null);
             ModifyTourLogCommand = new RelayCommand(_ => OpenModifyTourLogWindow(), _ => TourLogViewModel.SelectedTourLog != null);
+            LoggerHelper.Info("Main window opened and ViewModel initialized.");
+
         }
 
         private void OpenAddTourWindow()
