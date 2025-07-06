@@ -164,7 +164,7 @@
           "itext.bouncy-castle-adapter": "9.2.0"
         }
       },
-      "log4net/3.1.0": {
+      "log4net/3.2.0-preview.1": {
         "type": "package",
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.5.0"
@@ -3059,10 +3059,10 @@
         "itext7.bouncy-castle-adapter.nuspec"
       ]
     },
-    "log4net/3.1.0": {
-      "sha512": "GT7ZYyNcBNbMENUSSQsH8HkjrELe55UOwOkxMvUBfoSyq/K/c1SPi5aXCNHFqpyeCPlrq8nVx40z9pBVwnqkmA==",
+    "log4net/3.2.0-preview.1": {
+      "sha512": "p5R2GWLG7kItc1aXL314CIQqoLt9QZbMAVWPF6E/2JiGQWTPQdcOUJBvoCWHxVuRtIiiQbPIbffVino9GTEsSA==",
       "type": "package",
-      "path": "log4net/3.1.0",
+      "path": "log4net/3.2.0-preview.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3073,7 +3073,7 @@
         "lib/netstandard2.0/log4net.dll",
         "lib/netstandard2.0/log4net.pdb",
         "lib/netstandard2.0/log4net.xml",
-        "log4net.3.1.0.nupkg.sha512",
+        "log4net.3.2.0-preview.1.nupkg.sha512",
         "log4net.nuspec",
         "package-icon.png"
       ]
@@ -5954,6 +5954,7 @@
       "path": "system.appcontext/4.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7187,6 +7188,7 @@
       "path": "system.reflection.typeextensions/4.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9004,28 +9006,28 @@
       "PuppeteerSharp >= 20.2.0",
       "itext7 >= 9.2.0",
       "itext7.bouncy-castle-adapter >= 9.2.0",
-      "log4net >= 3.1.0",
+      "log4net >= 3.2.0-preview.1",
       "xunit >= 2.9.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wikto\\.nuget\\packages\\": {},
+    "C:\\Users\\Besitzer\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wikto\\Semester4\\SWEN2\\TourGuide\\TourGuide\\TourGuide\\TourGuide.csproj",
+      "projectUniqueName": "C:\\Users\\Besitzer\\Desktop\\FHTechnikum\\Semester4\\TourGuide\\TourGuide\\TourGuide\\TourGuide\\TourGuide.csproj",
       "projectName": "TourGuide",
-      "projectPath": "C:\\Users\\wikto\\Semester4\\SWEN2\\TourGuide\\TourGuide\\TourGuide\\TourGuide.csproj",
-      "packagesPath": "C:\\Users\\wikto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wikto\\Semester4\\SWEN2\\TourGuide\\TourGuide\\TourGuide\\obj\\",
+      "projectPath": "C:\\Users\\Besitzer\\Desktop\\FHTechnikum\\Semester4\\TourGuide\\TourGuide\\TourGuide\\TourGuide\\TourGuide.csproj",
+      "packagesPath": "C:\\Users\\Besitzer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Besitzer\\Desktop\\FHTechnikum\\Semester4\\TourGuide\\TourGuide\\TourGuide\\TourGuide\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\wikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Besitzer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -9103,7 +9105,7 @@
           },
           "log4net": {
             "target": "Package",
-            "version": "[3.1.0, )"
+            "version": "[3.2.0-preview.1, )"
           },
           "xunit": {
             "target": "Package",
@@ -9129,7 +9131,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
