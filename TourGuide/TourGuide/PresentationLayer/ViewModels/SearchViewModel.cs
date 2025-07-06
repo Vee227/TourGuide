@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.ComponentModel;
 using TourGuide.DataLayer.Repositories;
-using TourGuide.PresentationLayer.Comands;
+using TourGuide.DataLayer.Models;
+using System.Collections.ObjectModel;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
-    //Ich habs nur mal auskommentiert, weil die searchbar mit DB ZUgriff noch nicht funktioniert aber
-    //es gehört einkommentiert wieder - wir brauchen das!!!
-    /*public class SearchViewModel : INotifyPropertyChanged
+    public class SearchViewModel : INotifyPropertyChanged
     {
         private string _searchinput = string.Empty;
         public string SearchInput
@@ -24,28 +23,33 @@ namespace TourGuide.PresentationLayer.ViewModels
                 {
                     _searchinput = value;
                     OnPropertyChanged(nameof(SearchInput));
+                    PerformSearch();
                 }
             }
         }
 
-        public ICommand SearchCommand { get; }
+        private readonly TourListViewModel _tourListViewModel;
 
-        public SearchViewModel()
+        public SearchViewModel(TourListViewModel tourListViewModel)
         {
-            SearchCommand = new RelayCommand(_ => PerformSearch(), _ => !string.IsNullOrWhiteSpace(SearchInput));
+            _tourListViewModel = tourListViewModel;
         }
 
         private void PerformSearch()
         {
-            var search = new SearchRepository();
-            var searchQuery = search.BuildSearchQuery(SearchInput);
+            var repo = new SearchRepository();
 
-            //Das ist nur mal zum debuggen könn ma aber später weggeben wenn alles funkt
-            System.Diagnostics.Debug.WriteLine(searchQuery);
+            var filtered = repo.FilterTours(_tourListViewModel.AllTours, SearchInput);
+
+            _tourListViewModel.Tours.Clear();
+            foreach (var tour in filtered)
+            {
+                _tourListViewModel.Tours.Add(tour);
+            }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged(string propertyName) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }*/
+    }
 }

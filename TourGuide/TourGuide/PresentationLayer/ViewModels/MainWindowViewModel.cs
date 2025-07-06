@@ -56,6 +56,8 @@ namespace TourGuide.PresentationLayer.ViewModels
         }
 
         public TourLogViewModel TourLogViewModel { get; set; } = new TourLogViewModel();
+        
+        public SearchViewModel SearchViewModel { get; set; }
 
         public ICommand AddTourCommand { get; }
         public ICommand DeleteTourCommand { get; }
@@ -70,6 +72,8 @@ namespace TourGuide.PresentationLayer.ViewModels
         public MainWindowViewModel()
         {
             _tourListViewModel = new TourListViewModel();
+            
+            SearchViewModel = new SearchViewModel(TourListViewModel);
             
             AddTourCommand = new RelayCommand(_ => OpenAddTourWindow());
             DeleteTourCommand = new RelayCommand(_ => DeleteTour(), _ => SelectedTour != null);
@@ -105,11 +109,10 @@ namespace TourGuide.PresentationLayer.ViewModels
             TourLogViewModel.DeleteTourLog();
         }
 
-        
         private void ModifyTour()
         {
             if (SelectedTour == null) return;
-            
+
             var tourInList = TourListViewModel.Tours.FirstOrDefault(t => t.Id == SelectedTour.Id);
             if (tourInList != null)
             {
@@ -119,8 +122,6 @@ namespace TourGuide.PresentationLayer.ViewModels
 
             OnPropertyChanged(nameof(TourListViewModel.Tours));
         }
-
-
 
         private void OpenModifyTourLogWindow()
         {

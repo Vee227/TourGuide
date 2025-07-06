@@ -16,10 +16,12 @@ using TourGuide.DataLayer.Repositories;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
-    public class TourListViewModel : INotifyPropertyChanged
+     public class TourListViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<Tour> Tours { get; private set; } = new();
         public ObservableCollection<TourCardViewModel> TourCards { get; private set; } = new();
+        
+        public List<Tour> AllTours { get; private set; } = new();
 
         private Tour _selectedTour;
         public Tour SelectedTour
@@ -39,7 +41,7 @@ namespace TourGuide.PresentationLayer.ViewModels
             LoadTours();
             ModifyTourCommand = new RelayCommand(_ => ModifySelectedTour(), _ => SelectedTour != null);
         }
-        
+
         public async void DeleteTour(Tour tour)
         {
             if (tour == null) return;
@@ -53,6 +55,7 @@ namespace TourGuide.PresentationLayer.ViewModels
                 await repository.DeleteTourAsync(tour.Id);
 
                 Tours.Remove(tour);
+                AllTours.Remove(tour);
 
                 var cardToRemove = TourCards.FirstOrDefault(c => c.Tour == tour);
                 if (cardToRemove != null)
@@ -66,8 +69,7 @@ namespace TourGuide.PresentationLayer.ViewModels
                 Console.WriteLine($"Error deleting the tour: {ex.Message}");
             }
         }
-        
-        
+
         public async void ModifySelectedTour()
         {
             if (SelectedTour == null) return;
@@ -80,7 +82,6 @@ namespace TourGuide.PresentationLayer.ViewModels
 
                 await repository.UpdateTourAsync(SelectedTour);
                 Console.WriteLine("Tour saved");
-                
             }
             catch (Exception ex)
             {
@@ -106,31 +107,34 @@ namespace TourGuide.PresentationLayer.ViewModels
             ModifySelectedTour();
         }
 
-       
-       public async void LoadTours()
-       {
-           try
-           {
-               var factory = new TourPlannerContextFactory();
-               using var context = factory.CreateDbContext(null);
-               var repository = new TourRepository(context);
+        public async void LoadTours()
+        {
+            try
+            {
+                var factory = new TourPlannerContextFactory();
+                using var context = factory.CreateDbContext(null);
+                var repository = new TourRepository(context);
 
-               var loadedTours = await repository.GetAllToursAsync();
-               Tours = new ObservableCollection<Tour>(loadedTours);
+                var loadedTours = await repository.GetAllToursAsync();
+                
+                AllTours = loadedTours.ToList();
+                
+                Tours.Clear();
+                foreach (var tour in AllTours)
+                    Tours.Add(tour);
+                
+                TourCards.Clear();
+                foreach (var tour in Tours)
+                    TourCards.Add(CreateCardViewModel(tour));
 
-               TourCards.Clear();
-               foreach (var tour in Tours)
-                   TourCards.Add(CreateCardViewModel(tour));
-
-               OnPropertyChanged(nameof(Tours));
-               OnPropertyChanged(nameof(TourCards));
-           }
-           catch (Exception ex)
-           {
-               Console.WriteLine($"Fehler beim Laden der Touren: {ex.Message}");
-           }
-       }
-
+                OnPropertyChanged(nameof(Tours));
+                OnPropertyChanged(nameof(TourCards));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to load tours: {ex.Message}");
+            }
+        }
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)

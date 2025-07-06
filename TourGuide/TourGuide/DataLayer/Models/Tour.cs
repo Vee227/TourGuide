@@ -68,6 +68,24 @@ namespace TourGuide.DataLayer.Models
         {
             return $"{name}";
         }
+        
+        public int Popularity => TourLogs?.Count ?? 0;
+
+        public bool IsChildFriendly
+        {
+            get
+            {
+                if (TourLogs == null || TourLogs.Count == 0)
+                    return false;
+                
+                double avgDifficulty = TourLogs.Average(log => log.Difficulty);
+                double avgTime = TourLogs.Average(log => log.TotalTime);
+                double avgDistance = TourLogs.Average(log => TourLogs.Count > 0 ? log.TotalTime : 0);
+                
+                return avgDifficulty <= 2.5 && avgTime <= 60 && avgDistance <= 5;
+            }
+        }
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
