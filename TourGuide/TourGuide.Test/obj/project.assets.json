@@ -1508,6 +1508,22 @@
           "build/_._": {}
         }
       },
+      "PuppeteerSharp/20.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/PuppeteerSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/PuppeteerSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -2994,6 +3010,7 @@
           "Microsoft.Extensions.Configuration.Json": "9.0.6",
           "NUnit": "4.3.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+          "PuppeteerSharp": "20.2.0",
           "itext7": "9.2.0",
           "itext7.bouncy-castle-adapter": "9.2.0",
           "log4net": "3.2.0-preview.1",
@@ -5311,6 +5328,21 @@
         "lib/net8.0/nunit.framework.xml",
         "nunit.4.3.2.nupkg.sha512",
         "nunit.nuspec"
+      ]
+    },
+    "PuppeteerSharp/20.2.0": {
+      "sha512": "EJkbNCjEX6L77DmO5O5IDE1ZrX+PyVAZWPC1lKB8XpXwlYe1popt+1c8UzfspOX8XHLD9jPIZwAI/Hx5X93pVg==",
+      "type": "package",
+      "path": "puppeteersharp/20.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net8.0/PuppeteerSharp.dll",
+        "lib/net8.0/PuppeteerSharp.xml",
+        "lib/netstandard2.0/PuppeteerSharp.dll",
+        "lib/netstandard2.0/PuppeteerSharp.xml",
+        "puppeteersharp.20.2.0.nupkg.sha512",
+        "puppeteersharp.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
