@@ -4,14 +4,16 @@ using System.Windows;
 using System.Windows.Input;
 using TourGuide.DataLayer.Models;
 using TourGuide.PresentationLayer.Comands;
+using TourGuide.DataLayer.Repositories;
+using TourGuide.DataLayer;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
-    public class ModifyTourLogViewModel : INotifyPropertyChanged
+     public class ModifyTourLogViewModel : INotifyPropertyChanged
     {
         private readonly TourLogViewModel _tourLogViewModel;
         public TourLog SelectedTourLog => _tourLogViewModel.SelectedTourLog;
-        
+
         public List<int> DifficultyOptions { get; } = new() { 1, 2, 3, 4, 5 };
         public List<int> RatingOptions { get; } = new() { 1, 2, 3, 4, 5 };
         public ICommand SaveCommand { get; }
@@ -23,7 +25,7 @@ namespace TourGuide.PresentationLayer.ViewModels
             SaveCommand = new RelayCommand(_ => Save());
         }
 
-        private void Save()
+        private async void Save()
         {
             if (string.IsNullOrWhiteSpace(SelectedTourLog.Date) || !DateTime.TryParse(SelectedTourLog.Date, out _))
             {
@@ -51,8 +53,20 @@ namespace TourGuide.PresentationLayer.ViewModels
                 return;
             }
 
-            _tourLogViewModel.ModifyTourLog();
-            CloseWindow?.Invoke();
+            try
+            {
+                var factory = new TourPlannerContextFactory();
+                using var context = factory.CreateDbContext(null);
+                var repo = new TourLogRepository(context);
+
+                await repo.UpdateTourLogAsync(SelectedTourLog);
+                _tourLogViewModel.ModifyTourLog(); // UI-Refresh
+                CloseWindow?.Invoke();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating tour log: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

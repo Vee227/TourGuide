@@ -12,7 +12,6 @@ namespace TourGuide.DataLayer.Models
 
         public int TourId { get; set; }           // foreign key
         public Tour Tour { get; set; }            // navigation property
-        public string TourName { get; set; }
         public string Date { get; set; }
         public string Comment { get; set; }
         public int Difficulty { get; set; } 

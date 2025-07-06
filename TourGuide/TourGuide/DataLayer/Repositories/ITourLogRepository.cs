@@ -12,5 +12,6 @@ namespace TourGuide.DataLayer.Repositories
         Task<IEnumerable<TourLog>> GetLogsByTourIdAsync(int tourId);
         Task AddTourLogAsync(TourLog log);
         Task DeleteTourLogAsync(int id);
+        Task UpdateTourLogAsync(TourLog log);
     }
 }

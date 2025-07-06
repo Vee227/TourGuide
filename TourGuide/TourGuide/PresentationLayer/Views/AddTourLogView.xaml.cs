@@ -9,10 +9,10 @@ namespace TourGuide.PresentationLayer.Views
 {
     public partial class AddTourLogView : Window
     {
-        public AddTourLogView(TourLogViewModel tourLogViewModel, string selectedTourName)
+        public AddTourLogView(TourLogViewModel tourLogViewModel, int selectedTourId)
         {
             InitializeComponent();
-            var viewModel = new AddTourLogViewModel(tourLogViewModel, selectedTourName);
+            var viewModel = new AddTourLogViewModel(tourLogViewModel, selectedTourId);
             viewModel.CloseWindow = () => this.DialogResult = true;
             DataContext = viewModel;
         }

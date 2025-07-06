@@ -7,17 +7,14 @@ using System.Text.Json;
 using System.Windows.Input;
 using TourGuide.PresentationLayer.Comands;
 using TourGuide.DataLayer.Models;
+using TourGuide.DataLayer.Repositories;
+using TourGuide.DataLayer;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
     public class TourLogViewModel : INotifyPropertyChanged
     {
-        private static readonly string LogFilePath = Path.Combine(
-            Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName,
-            "tourlogs.json"
-        );
-
-        public ObservableCollection<TourLog> TourLogs { get; set; } = new ObservableCollection<TourLog>();
+        public ObservableCollection<TourLog> TourLogs { get; set; } = new();
 
         private TourLog _selectedTourLog;
         public TourLog SelectedTourLog
@@ -34,6 +31,8 @@ namespace TourGuide.PresentationLayer.ViewModels
         public ICommand DeleteTourLogCommand { get; }
         public ICommand ModifyTourLogCommand { get; }
 
+        private int _currentTourId;
+
         public TourLogViewModel()
         {
             AddTourLogCommand = new RelayCommand(_ => OpenAddTourLogWindow());
@@ -41,23 +40,19 @@ namespace TourGuide.PresentationLayer.ViewModels
             ModifyTourLogCommand = new RelayCommand(_ => OpenModifyTourLogWindow(), _ => SelectedTourLog != null);
         }
 
-        public void LoadTourLogs(string? tourName)
+        public async void LoadTourLogs(int tourId)
         {
+            _currentTourId = tourId;
+
             try
             {
-                if (File.Exists(LogFilePath))
-                {
-                    var json = File.ReadAllText(LogFilePath);
-                    var loadedLogs = JsonSerializer.Deserialize<ObservableCollection<TourLog>>(json);
+                var factory = new TourPlannerContextFactory();
+                using var context = factory.CreateDbContext(null);
+                var repo = new TourLogRepository(context);
 
-                    if (loadedLogs != null)
-                    {
-                        TourLogs = new ObservableCollection<TourLog>(
-                            loadedLogs.Where(log => log.TourName == tourName)
-                        );
-                        OnPropertyChanged(nameof(TourLogs));
-                    }
-                }
+                var logs = await repo.GetLogsByTourIdAsync(tourId);
+                TourLogs = new ObservableCollection<TourLog>(logs);
+                OnPropertyChanged(nameof(TourLogs));
             }
             catch (Exception ex)
             {
@@ -65,27 +60,29 @@ namespace TourGuide.PresentationLayer.ViewModels
             }
         }
 
-        public void AddTourLog(TourLog newLog)
+        public async void DeleteTourLog()
         {
-            TourLogs.Add(newLog);
-            SaveTourLogs();
-            OnPropertyChanged(nameof(TourLogs));
-        }
+            if (SelectedTourLog == null) return;
 
-        public void DeleteTourLog()
-        {
-            if (SelectedTourLog != null)
+            try
             {
+                var factory = new TourPlannerContextFactory();
+                using var context = factory.CreateDbContext(null);
+                var repo = new TourLogRepository(context);
+
+                await repo.DeleteTourLogAsync(SelectedTourLog.Id);
                 TourLogs.Remove(SelectedTourLog);
-                SaveTourLogs();
                 SelectedTourLog = null;
                 OnPropertyChanged(nameof(TourLogs));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Fehler beim Löschen des TourLogs: {ex.Message}");
             }
         }
 
         public void ModifyTourLog()
         {
-            SaveTourLogs();
             OnPropertyChanged(nameof(TourLogs));
         }
 
@@ -95,22 +92,9 @@ namespace TourGuide.PresentationLayer.ViewModels
             modifyWindow.ShowDialog();
         }
 
-        private void SaveTourLogs()
-        {
-            try
-            {
-                var json = JsonSerializer.Serialize(TourLogs, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(LogFilePath, json);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Fehler beim Speichern der TourLogs: {ex.Message}");
-            }
-        }
-
         private void OpenAddTourLogWindow()
         {
-            var addTourLogWindow = new Views.AddTourLogView(this, "Selected Tour");
+            var addTourLogWindow = new Views.AddTourLogView(this, _currentTourId);
             addTourLogWindow.ShowDialog();
         }
 

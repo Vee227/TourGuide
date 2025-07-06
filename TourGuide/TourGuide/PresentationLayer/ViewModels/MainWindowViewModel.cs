@@ -35,7 +35,10 @@ namespace TourGuide.PresentationLayer.ViewModels
                     _selectedTour = value;
                     OnPropertyChanged(nameof(SelectedTour));
                     OnPropertyChanged(nameof(TourDetailViewModel)); 
-                    TourLogViewModel.LoadTourLogs(_selectedTour?.name);
+                    if (_selectedTour != null)
+                    {
+                        TourLogViewModel.LoadTourLogs(_selectedTour.Id);
+                    }
                     OnPropertyChanged(nameof(TourLogViewModel.TourLogs));
                 }
             }
@@ -84,7 +87,7 @@ namespace TourGuide.PresentationLayer.ViewModels
 
         private void OpenAddTourLogWindow()
         {
-            var addTourLogWindow = new AddTourLogView(TourLogViewModel, SelectedTour.name);
+            var addTourLogWindow = new AddTourLogView(TourLogViewModel, SelectedTour.Id);
             addTourLogWindow.ShowDialog();
         }
 

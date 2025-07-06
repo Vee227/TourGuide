@@ -7,15 +7,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d230cb5d-8d5d-4c50-86d9-b20d9000717f" name="Changes" comment="Again push to test smth">
+    <list default="true" id="d230cb5d-8d5d-4c50-86d9-b20d9000717f" name="Changes" comment="Tour DB connection updated">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TourGuide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TourGuide/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/DataLayer/Repositories/TourRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/DataLayer/Repositories/TourRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/AddTourViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/AddTourViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/UnitTest1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/DataLayer/Models/TourLog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/DataLayer/Models/TourLog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/DataLayer/Repositories/ITourLogRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/DataLayer/Repositories/ITourLogRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/DataLayer/Repositories/TourLogRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/DataLayer/Repositories/TourLogRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/Migrations/TourPlannerContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/Migrations/TourPlannerContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/AddTourLogViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/AddTourLogViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/MainWindowViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/ModifyTourLogViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/ModifyTourLogViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/TourLogViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/TourLogViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/Views/AddTourLogView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/Views/AddTourLogView.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.exe" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.sourcelink.json" afterDir="false" />
@@ -47,7 +56,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/AddTourLogView.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/PresentationLayer/ViewModels/AddTourViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/PresentationLayer/Views/AddTourLogView.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/AddTourLogView.g.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -163,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751714809821</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Tour DB connection updated">
+      <option name="closed" value="true" />
+      <created>1751720430187</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1751720430187</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +217,7 @@
     <MESSAGE value="Preparations for the Searchbar with DB Access" />
     <MESSAGE value="&#10;Changed the Tour json parts to actual db connection + added Distance in Details - logs are following" />
     <MESSAGE value="Again push to test smth" />
-    <option name="LAST_COMMIT_MESSAGE" value="Again push to test smth" />
+    <MESSAGE value="Tour DB connection updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tour DB connection updated" />
   </component>
 </project>

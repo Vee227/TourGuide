@@ -4,10 +4,13 @@ using System.Windows;
 using System.Windows.Input;
 using TourGuide.DataLayer.Models;
 using TourGuide.PresentationLayer.Comands;
+using TourGuide.DataLayer;
+using TourGuide.DataLayer.Repositories;
+using System.Globalization;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
-    public class AddTourLogViewModel : INotifyPropertyChanged
+   public class AddTourLogViewModel : INotifyPropertyChanged
     {
         public string Date { get; set; } = string.Empty;
         public string Comment { get; set; } = string.Empty;
@@ -16,52 +19,56 @@ namespace TourGuide.PresentationLayer.ViewModels
         public int? Rating { get; set; }
 
         private readonly TourLogViewModel _tourLogViewModel;
-        private readonly string _selectedTourName;
+        private readonly int _tourId;
 
         public ICommand SaveCommand { get; }
         public Action CloseWindow { get; set; }
-        
+
         public List<int> DifficultyOptions { get; } = new() { 1, 2, 3, 4, 5 };
         public List<int> RatingOptions { get; } = new() { 1, 2, 3, 4, 5 };
 
-        public AddTourLogViewModel(TourLogViewModel tourLogViewModel, string selectedTourName)
+        public AddTourLogViewModel(TourLogViewModel tourLogViewModel, int tourId)
         {
             _tourLogViewModel = tourLogViewModel;
-            _selectedTourName = selectedTourName;
+            _tourId = tourId;
             SaveCommand = new RelayCommand(_ => Save());
         }
 
-        private void Save()
+        private async void Save()
         {
-            if (string.IsNullOrWhiteSpace(Date) || !DateTime.TryParse(Date, out _))
+            if (!DateTime.TryParseExact(Date, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
             {
-                MessageBox.Show("Please enter a valid date (YYYY-MM-DD).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please enter a valid date in format YYYY-MM-DD.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
             if (string.IsNullOrWhiteSpace(Comment))
             {
                 MessageBox.Show("Comment cannot be empty.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            if (Difficulty is null || Difficulty < 1 || Difficulty > 5)
+
+            if (Difficulty is null or < 1 or > 5)
             {
-                MessageBox.Show("Please select a valid difficulty (1-5).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please select a valid difficulty (1–5).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            if (TotalTime is null || TotalTime <= 0)
+
+            if (TotalTime is null or <= 0)
             {
                 MessageBox.Show("Total time must be a positive number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            if (Rating is null || Rating < 1 || Rating > 5)
+
+            if (Rating is null or < 1 or > 5)
             {
-                MessageBox.Show("Please select a valid rating (1-5).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please select a valid rating (1–5).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            var newTourLog = new TourLog
+            var newLog = new TourLog
             {
-                TourName = _selectedTourName,
+                TourId = _tourId,
                 Date = Date,
                 Comment = Comment,
                 Difficulty = Difficulty.Value,
@@ -69,8 +76,20 @@ namespace TourGuide.PresentationLayer.ViewModels
                 Rating = Rating.Value
             };
 
-            _tourLogViewModel.AddTourLog(newTourLog);
-            CloseWindow?.Invoke();
+            try
+            {
+                var factory = new TourPlannerContextFactory();
+                using var context = factory.CreateDbContext(null);
+                var repo = new TourLogRepository(context);
+                await repo.AddTourLogAsync(newLog);
+
+                _tourLogViewModel.LoadTourLogs(_tourId);
+                CloseWindow?.Invoke();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving tour log: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
