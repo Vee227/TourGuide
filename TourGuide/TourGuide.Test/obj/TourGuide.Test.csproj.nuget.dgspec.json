@@ -171,6 +171,14 @@
               "target": "Package",
               "version": "[9.0.4, )"
             },
+            "itext7": {
+              "target": "Package",
+              "version": "[9.2.0, )"
+            },
+            "itext7.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[9.2.0, )"
+            },
             "log4net": {
               "target": "Package",
               "version": "[3.2.0-preview.1, )"

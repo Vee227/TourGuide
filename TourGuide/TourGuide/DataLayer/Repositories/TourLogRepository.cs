@@ -58,5 +58,12 @@ namespace TourGuide.DataLayer.Repositories
             ");
             LoggerHelper.Info($"Updated TourLog ID {log.Id} for Tour ID {log.TourId}.");
         }
+        
+        public async Task<Dictionary<int, List<TourLog>>> GetAllLogsGroupedByTourAsync()
+        {
+            var logs = await _context.TourLogs.FromSqlInterpolated($@"SELECT * FROM ""TourLogs""").ToListAsync();
+            return logs.GroupBy(l => l.TourId).ToDictionary(g => g.Key, g => g.ToList());
+        }
+
     }
 }

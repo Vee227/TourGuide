@@ -15,7 +15,7 @@ namespace TourGuide.DataLayer
 
         public TourPlannerContext(DbContextOptions<TourPlannerContext> options)
             : base(options) { }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Tour>()

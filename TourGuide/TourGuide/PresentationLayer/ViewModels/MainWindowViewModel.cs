@@ -2,10 +2,14 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Windows.Input;
+using Microsoft.EntityFrameworkCore;
 using TourGuide.PresentationLayer.Comands;
 using TourGuide.DataLayer.Models;
+using TourGuide.DataLayer;
+using TourGuide.DataLayer.Repositories;
 using TourGuide.PresentationLayer.Views;
 using System.Windows;
 using log4net;
@@ -28,7 +32,9 @@ namespace TourGuide.PresentationLayer.ViewModels
         
         private static readonly ILog log = LogManager.GetLogger(typeof(MainWindowViewModel));
 
-        
+        public ICommand GenerateSingleTourReportCommand { get; }
+        public ICommand GenerateSummaryReportCommand { get; }
+
         private Tour _selectedTour;
         public Tour SelectedTour
         {
@@ -87,6 +93,8 @@ namespace TourGuide.PresentationLayer.ViewModels
             AddTourLogCommand = new RelayCommand(_ => OpenAddTourLogWindow(), _ => SelectedTour != null);
             DeleteTourLogCommand = new RelayCommand(_ => DeleteTourLog(), _ => TourLogViewModel.SelectedTourLog != null);
             ModifyTourLogCommand = new RelayCommand(_ => OpenModifyTourLogWindow(), _ => TourLogViewModel.SelectedTourLog != null);
+            GenerateSingleTourReportCommand = new RelayCommand(_ => GenerateSingleTourReport(), _ => SelectedTour != null);
+            GenerateSummaryReportCommand = new RelayCommand(_ => GenerateSummaryReport());
             LoggerHelper.Info("Main window opened and ViewModel initialized.");
 
         }
@@ -139,7 +147,43 @@ namespace TourGuide.PresentationLayer.ViewModels
                 modifyTourLogWindow.ShowDialog();
             }
         }
+        private void GenerateSingleTourReport()
+        {
+            try
+            {
+                var logs = TourLogViewModel.TourLogs?.ToList() ?? new List<TourLog>();
+                ReportGenerator.GenerateSingleTourReport(SelectedTour, logs);
+                LoggerHelper.Info($"Generated report for tour '{SelectedTour.name}' (ID: {SelectedTour.Id})");
+                MessageBox.Show("Report created successfully!", "PDF Report", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Error("Failed to generate tour report.", ex);
+                MessageBox.Show("Failed to create report.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        
+        private async void GenerateSummaryReport()
+        {
+            try
+            {
+                var tourRepo = new TourRepository(new TourPlannerContextFactory().CreateDbContext(null));
+                var logRepo = new TourLogRepository(new TourPlannerContextFactory().CreateDbContext(null));
 
+                var allTours = (await tourRepo.GetAllToursAsync()).ToList();
+                var logsPerTour = await logRepo.GetAllLogsGroupedByTourAsync();
+
+                ReportGenerator.GenerateSummaryReport(allTours, logsPerTour);
+                LoggerHelper.Info("Generated summary report.");
+                MessageBox.Show("Summary report created successfully!", "PDF Report", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Error("Failed to generate summary report.", ex);
+                MessageBox.Show("Failed to create summary report.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
