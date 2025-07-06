@@ -22,6 +22,7 @@
     <PackageReference Include="MSTest.TestFramework" Version="3.8.3" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageReference Include="NUnit" Version="4.3.2" />
+    <PackageReference Include="PuppeteerSharp" Version="20.2.0" />
     <PackageReference Include="xunit" Version="2.9.3" />
   </ItemGroup>
 
@@ -34,6 +35,10 @@
     <Content Include="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Maps\" />
   </ItemGroup>
 
 </Project>

@@ -55,7 +55,7 @@ namespace TourGuide.PresentationLayer.ViewModels
             if (Difficulty is null or < 1 or > 5)
             {
                 LoggerHelper.Warn("Invalid difficulty in AddTourLog.");
-                MessageBox.Show("Please select a valid difficulty (1–5).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please select a valid difficulty (1 (easy) –5 (hard)).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -69,7 +69,7 @@ namespace TourGuide.PresentationLayer.ViewModels
             if (Rating is null or < 1 or > 5)
             {
                 LoggerHelper.Warn("Invalid rating in AddTourLog.");
-                MessageBox.Show("Please select a valid rating (1–5).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please select a valid rating (1 (bad) –5 (good)).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 

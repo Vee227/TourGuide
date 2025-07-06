@@ -39,7 +39,7 @@ namespace TourGuide.PresentationLayer.ViewModels
             }
             if (SelectedTourLog.Difficulty < 1 || SelectedTourLog.Difficulty > 5)
             {
-                MessageBox.Show("Please select a valid difficulty (1-5).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please select a valid difficulty (1 (easy) -5 (hard)).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (SelectedTourLog.TotalTime <= 0)
@@ -49,7 +49,7 @@ namespace TourGuide.PresentationLayer.ViewModels
             }
             if (SelectedTourLog.Rating < 1 || SelectedTourLog.Rating > 5)
             {
-                MessageBox.Show("Please select a valid rating (1-5).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please select a valid rating (1 (bad) -5 (good)).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 

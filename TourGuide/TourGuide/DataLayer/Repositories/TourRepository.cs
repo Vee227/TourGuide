@@ -36,16 +36,27 @@ namespace TourGuide.DataLayer.Repositories
         }
 
         public async Task AddTourAsync(Tour tour)
-        {
+        { 
             try
             {
                 await _context.Database.ExecuteSqlInterpolatedAsync($@"
-            INSERT INTO ""Tours""
-                (""name"", ""description"", ""startLocation"", ""endLocation"", ""transporttype"", ""distance"", ""estimatedTime"")
-            VALUES
-                ({tour.name}, {tour.description}, {tour.startLocation}, {tour.endLocation},
-                 {tour.transporttype}, {tour.distance}, {tour.estimatedTime});
-                ");
+                INSERT INTO ""Tours""
+                    (""name"", ""description"", ""startLocation"", ""endLocation"", ""transporttype"", ""distance"", ""estimatedTime"")
+                 VALUES
+                    ({tour.name}, {tour.description}, {tour.startLocation}, {tour.endLocation},
+                     {tour.transporttype}, {tour.distance}, {tour.estimatedTime});
+                SELECT lastval();
+                    ");
+                
+                var insertedTour = await _context.Tours
+                    .FromSqlInterpolated($@"SELECT * FROM ""Tours"" WHERE ""name"" = {tour.name} ORDER BY ""Id"" DESC LIMIT 1")
+                    .FirstOrDefaultAsync();
+
+                if (insertedTour != null)
+                {
+                    tour.Id = insertedTour.Id;
+                }
+
                 LoggerHelper.Info($"Tour '{tour.name}' added to database.");
             }
             catch (Exception ex)

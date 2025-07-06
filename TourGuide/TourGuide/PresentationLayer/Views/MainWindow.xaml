@@ -2,10 +2,16 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:TourGuide.PresentationLayer.Views"
-        xmlns:vm="clr-namespace:TourGuide.PresentationLayer.ViewModels"
+        xmlns:conv="clr-namespace:TourGuide.PresentationLayer.Converters"
         Title="Tour Planner" Height="600" Width="800"
         Background="#F8F8F8" FontFamily="Segoe UI" FontSize="14" 
         SizeToContent="Manual">
+    
+    <Window.Resources>
+        <conv:NullToVisibilityConverter x:Key="NullToVisible" />
+        <conv:NullToVisibilityConverter x:Key="NullToCollapsed" Invert="True" />
+    </Window.Resources>
+
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -107,13 +113,23 @@
                     <RowDefinition Height="3.5*"/>
                 </Grid.RowDefinitions>
 
-                <Border Grid.Row="0" Background="#ECF0F1" CornerRadius="8"
-                        Margin="10" BorderBrush="#BDC3C7" BorderThickness="1"
-                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <TextBlock Text="🗺 Map Preview" HorizontalAlignment="Center"
-                               VerticalAlignment="Center" FontSize="18" FontWeight="SemiBold"
-                               Foreground="#2C3E50"/>
-                </Border>
+                
+                <Grid Grid.Row="0" Margin="10">
+                    <Image Source="{Binding TourDetailViewModel.SelectedTour.mapImagePath}"
+                           Visibility="{Binding TourDetailViewModel.SelectedTour.mapImagePath, Converter={StaticResource NullToVisible}}"
+                           Stretch="Uniform"
+                           Margin="10"
+                    />
+
+                    <TextBlock Text="🗺 No map image available"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="18" FontWeight="SemiBold"
+                               Foreground="#2C3E50"
+                               Visibility="{Binding TourDetailViewModel.SelectedTour.mapImagePath, Converter={StaticResource NullToCollapsed}}"/>
+                </Grid>
+
+                
 
                 <TabControl Grid.Row="1" Margin="10" BorderThickness="0"
                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
