@@ -95,6 +95,7 @@ namespace TourGuide.PresentationLayer.ViewModels
             ModifyTourLogCommand = new RelayCommand(_ => OpenModifyTourLogWindow(), _ => TourLogViewModel.SelectedTourLog != null);
             GenerateSingleTourReportCommand = new RelayCommand(_ => GenerateSingleTourReport(), _ => SelectedTour != null);
             GenerateSummaryReportCommand = new RelayCommand(_ => GenerateSummaryReport());
+            LoadTopTours();
             LoggerHelper.Info("Main window opened and ViewModel initialized.");
 
         }
@@ -183,7 +184,36 @@ namespace TourGuide.PresentationLayer.ViewModels
                 MessageBox.Show("Failed to create summary report.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        
+        public ObservableCollection<Tour> TopTours { get; set; } = new();
+
+        private async void LoadTopTours()
+        {
+            var repo = new TourLogRepository(new TourPlannerContextFactory().CreateDbContext(null));
+            var groupedLogs = await repo.GetAllLogsGroupedByTourAsync();
+
+            var tourRepo = new TourRepository(new TourPlannerContextFactory().CreateDbContext(null));
+            var allTours = await tourRepo.GetAllToursAsync();
+
+            var top = groupedLogs
+                .OrderByDescending(g => g.Value.Count)
+                .Take(3)
+                .Select(g => {
+                    var tour = allTours.FirstOrDefault(t => t.Id == g.Key);
+                    if (tour != null)
+                    {
+                        tour.TourLogs = g.Value;
+                        return tour;
+                    }
+                    return null;
+                })
+                .Where(t => t != null)
+                .ToList();
+
+            TopTours.Clear();
+            foreach (var tour in top)
+                TopTours.Add(tour);
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
