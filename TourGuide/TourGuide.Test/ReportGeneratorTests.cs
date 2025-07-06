@@ -69,6 +69,22 @@ namespace TourGuide.Test
             foreach (var f in files)
                 File.Delete(f);
         }
+        
+        [Fact]
+        public void ReportsFolder_ShouldBeWritable()
+        {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
+            string testFile = Path.Combine(path, "test.txt");
+
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+            File.WriteAllText(testFile, "test");
+            Assert.True(File.Exists(testFile));
+
+            File.Delete(testFile);
+        }
+
     }
 }
 

@@ -15,6 +15,7 @@
           "Microsoft.Extensions.Configuration.Json": "9.0.6",
           "NUnit": "4.3.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+          "PuppeteerSharp": "20.2.0",
           "itext7": "9.2.0",
           "itext7.bouncy-castle-adapter": "9.2.0",
           "log4net": "3.2.0-preview.1",
@@ -1169,6 +1170,17 @@
           }
         }
       },
+      "PuppeteerSharp/20.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "9.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/PuppeteerSharp.dll": {
+            "assemblyVersion": "20.2.0.0",
+            "fileVersion": "20.2.0.0"
+          }
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -2198,6 +2210,13 @@
       "sha512": "sha512-puVXayXNmEu7MFQSUswGmUjOy3M3baprMbkLl5PAutpeDoGTr+jPv33qAYsqxywi2wJCq8l/O3EhHoLulPE1iQ==",
       "path": "nunit/4.3.2",
       "hashPath": "nunit.4.3.2.nupkg.sha512"
+    },
+    "PuppeteerSharp/20.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EJkbNCjEX6L77DmO5O5IDE1ZrX+PyVAZWPC1lKB8XpXwlYe1popt+1c8UzfspOX8XHLD9jPIZwAI/Hx5X93pVg==",
+      "path": "puppeteersharp/20.2.0",
+      "hashPath": "puppeteersharp.20.2.0.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

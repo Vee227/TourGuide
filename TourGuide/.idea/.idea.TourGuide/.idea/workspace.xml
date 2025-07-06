@@ -10,13 +10,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d230cb5d-8d5d-4c50-86d9-b20d9000717f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TourGuide.Test/TourRepositoryTests.cs" afterDir="false" />
+    <list default="true" id="d230cb5d-8d5d-4c50-86d9-b20d9000717f" name="Changes" comment="git conflict resolving issues merge">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TourGuide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TourGuide/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/LoggerHelperTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/LoggerHelperTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/ReportGeneratorTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/ReportGeneratorTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/TourGuide.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/TourGuide.Test.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/TourRepositoryTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/TourRepositoryTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.exe" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.pdb" afterDir="false" />
@@ -27,26 +30,33 @@
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/ref/TourGuide.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/ref/TourGuide.Test.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/refint/TourGuide.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/refint/TourGuide.Test.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/TourGuide.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/TourGuide.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.exe" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/ref/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/ref/TourGuide.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/refint/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/refint/TourGuide.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/TourGuide.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/TourGuide.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/project.nuget.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,19 +82,62 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/App.xaml" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/DataLayer/Repositories/SearchRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/DataLayer/Repositories/TourLogRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/DataLayer/TourPlannerContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/PresentationLayer/ViewModels/MainWindowViewModel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/PresentationLayer/ViewModels/SearchViewModel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/PresentationLayer/Views/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/PresentationLayer/Views/MainWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8649bccd44969a795a832ab18d4ea6dcdaee9be3c4742cd97f795937152ab9/DbUpdateException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.deps.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.deps.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.sourcelink.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.dgspec.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.dgspec.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/TourGuide.Test.csproj.nuget.dgspec.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/project.assets.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/project.assets.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/project.assets.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide.Test/obj/project.assets.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/DataLayer/Repositories/TourRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/DataLayer/Repositories/TourRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/DataLayer/Services/RouteService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/DataLayer/Services/RouteService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/DataLayer/Services/RouteService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/DataLayer/Services/RouteService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/DataLayer/Services/RouteService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/DataLayer/Services/RouteService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/DataLayer/Services/RouteService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/DataLayer/Services/RouteService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/PresentationLayer/ViewModels/AddTourLogViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/PresentationLayer/ViewModels/AddTourLogViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/PresentationLayer/ViewModels/AddTourViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/PresentationLayer/ViewModels/AddTourViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.deps.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/GeneratedInternalTypeHelper.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/GeneratedInternalTypeHelper.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/AddTourLogView.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Besitzer/Desktop/FHTechnikum/Semester4/TourGuide/TourGuide/TourGuide/TourGuide/obj/TourGuide.csproj.nuget.dgspec.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/TourGuide.sourcelink.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/TourGuide.sourcelink.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/TourGuide.sourcelink.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/Debug/net8.0-windows/TourGuide.sourcelink.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/TourGuide.csproj.nuget.dgspec.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/TourGuide.csproj.nuget.dgspec.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/TourGuide.csproj.nuget.dgspec.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/project.assets.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/project.assets.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/project.assets.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wikto/Semester4/SWEN2/TourGuide/TourGuide/TourGuide/obj/project.assets.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -115,7 +168,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.TourGuide">
     <configuration name="TourGuide" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -232,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751825838204</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="git conflict resolving issues merge">
+      <option name="closed" value="true" />
+      <created>1751836867957</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1751836867957</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +333,7 @@
     <MESSAGE value="Searchfunction for Tours works - TourLog doesn't work yet" />
     <MESSAGE value="log4 implementation" />
     <MESSAGE value="Unique Feature - leaderboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unique Feature - leaderboard" />
+    <MESSAGE value="git conflict resolving issues merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="git conflict resolving issues merge" />
   </component>
 </project>

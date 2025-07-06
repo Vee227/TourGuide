@@ -56,5 +56,16 @@ namespace TourGuide.Test
                 e.RenderedMessage == message &&
                 e.ExceptionObject?.Message == "Boom");
         }
+        
+        [Fact]
+        public void Fatal_ShouldLogFatalMessage()
+        {
+            string message = "Fatal error";
+            LoggerHelper.Fatal(message);
+    
+            var events = _memoryAppender.GetEvents();
+            Assert.Contains(events, e => e.Level == Level.Fatal && e.RenderedMessage == message);
+        }
+
     }
 }
