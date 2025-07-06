@@ -23,7 +23,7 @@ namespace TourGuide.PresentationLayer.ViewModels
             "Bike",
             "Hike",
             "Run",
-            "Rollerskates"
+            "Car"
         };
 
         public TourDetailViewModel(Tour selectedTour)

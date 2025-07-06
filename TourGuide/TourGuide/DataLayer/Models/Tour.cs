@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 
 namespace TourGuide.DataLayer.Models
 {
-    public class Tour : INotifyPropertyChanged
+     public class Tour : INotifyPropertyChanged
     {
         public int Id { get; set; }
 
@@ -61,14 +61,21 @@ namespace TourGuide.DataLayer.Models
             get => _estimatedTime;
             set => SetField(ref _estimatedTime, value);
         }
+        
+        private string? _mapImagePath;
+        public string? mapImagePath
+        {
+            get => _mapImagePath;
+            set => SetField(ref _mapImagePath, value);
+        }
 
         public virtual ICollection<TourLog> TourLogs { get; set; } = new List<TourLog>();
-        
+
         public override string ToString()
         {
             return $"{name}";
         }
-        
+
         public int Popularity => TourLogs?.Count ?? 0;
 
         public bool IsChildFriendly
@@ -77,15 +84,14 @@ namespace TourGuide.DataLayer.Models
             {
                 if (TourLogs == null || TourLogs.Count == 0)
                     return false;
-                
+
                 double avgDifficulty = TourLogs.Average(log => log.Difficulty);
                 double avgTime = TourLogs.Average(log => log.TotalTime);
                 double avgDistance = TourLogs.Average(log => TourLogs.Count > 0 ? log.TotalTime : 0);
-                
+
                 return avgDifficulty <= 2.5 && avgTime <= 60 && avgDistance <= 5;
             }
         }
-
 
         public event PropertyChangedEventHandler? PropertyChanged;
 

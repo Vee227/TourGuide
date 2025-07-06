@@ -1072,6 +1072,22 @@
           "build/_._": {}
         }
       },
+      "PuppeteerSharp/20.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/PuppeteerSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/PuppeteerSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Diagnostics.DiagnosticSource/9.0.6": {
         "type": "package",
         "compile": {
@@ -1265,6 +1281,7 @@
           "Microsoft.Extensions.Configuration.Json": "9.0.6",
           "NUnit": "4.3.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+          "PuppeteerSharp": "20.2.0",
           "xunit": "2.9.3"
         },
         "compile": {
@@ -3022,6 +3039,21 @@
         "nunit.nuspec"
       ]
     },
+    "PuppeteerSharp/20.2.0": {
+      "sha512": "EJkbNCjEX6L77DmO5O5IDE1ZrX+PyVAZWPC1lKB8XpXwlYe1popt+1c8UzfspOX8XHLD9jPIZwAI/Hx5X93pVg==",
+      "type": "package",
+      "path": "puppeteersharp/20.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net8.0/PuppeteerSharp.dll",
+        "lib/net8.0/PuppeteerSharp.xml",
+        "lib/netstandard2.0/PuppeteerSharp.dll",
+        "lib/netstandard2.0/PuppeteerSharp.xml",
+        "puppeteersharp.20.2.0.nupkg.sha512",
+        "puppeteersharp.nuspec"
+      ]
+    },
     "System.Diagnostics.DiagnosticSource/9.0.6": {
       "sha512": "nikkwAKqpwWUvV5J8S9fnOPYg8k75Lf9fAI4bd6pyhyqNma0Py9kt+zcqXbe4TjJ4sTPcdYpPg81shYTrXnUZQ==",
       "type": "package",
@@ -3357,23 +3389,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Besitzer\\.nuget\\packages\\": {},
+    "C:\\Users\\wikto\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Besitzer\\Desktop\\FHTechnikum\\Semester4\\TourGuide\\TourGuide\\TourGuide\\TourGuide.Test\\TourGuide.Test.csproj",
+      "projectUniqueName": "C:\\Users\\wikto\\Semester4\\SWEN2\\TourGuide\\TourGuide\\TourGuide.Test\\TourGuide.Test.csproj",
       "projectName": "TourGuide.Test",
-      "projectPath": "C:\\Users\\Besitzer\\Desktop\\FHTechnikum\\Semester4\\TourGuide\\TourGuide\\TourGuide\\TourGuide.Test\\TourGuide.Test.csproj",
-      "packagesPath": "C:\\Users\\Besitzer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Besitzer\\Desktop\\FHTechnikum\\Semester4\\TourGuide\\TourGuide\\TourGuide\\TourGuide.Test\\obj\\",
+      "projectPath": "C:\\Users\\wikto\\Semester4\\SWEN2\\TourGuide\\TourGuide\\TourGuide.Test\\TourGuide.Test.csproj",
+      "packagesPath": "C:\\Users\\wikto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\wikto\\Semester4\\SWEN2\\TourGuide\\TourGuide\\TourGuide.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Besitzer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\wikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3389,8 +3421,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\Besitzer\\Desktop\\FHTechnikum\\Semester4\\TourGuide\\TourGuide\\TourGuide\\TourGuide\\TourGuide.csproj": {
-              "projectPath": "C:\\Users\\Besitzer\\Desktop\\FHTechnikum\\Semester4\\TourGuide\\TourGuide\\TourGuide\\TourGuide\\TourGuide.csproj"
+            "C:\\Users\\wikto\\Semester4\\SWEN2\\TourGuide\\TourGuide\\TourGuide\\TourGuide.csproj": {
+              "projectPath": "C:\\Users\\wikto\\Semester4\\SWEN2\\TourGuide\\TourGuide\\TourGuide\\TourGuide.csproj"
             }
           }
         }
@@ -3446,7 +3478,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -43,6 +43,9 @@ namespace TourGuide.Migrations
                     b.Property<double>("estimatedTime")
                         .HasColumnType("double precision");
 
+                    b.Property<string>("mapImagePath")
+                        .HasColumnType("text");
+
                     b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("text");

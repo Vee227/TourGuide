@@ -942,3 +942,6 @@ C:\Users\Besitzer\Desktop\FHTechnikum\Semester4\TourGuide\TourGuide\TourGuide\To
 C:\Users\Besitzer\Desktop\FHTechnikum\Semester4\TourGuide\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\TourGuide.genruntimeconfig.cache
 C:\Users\Besitzer\Desktop\FHTechnikum\Semester4\TourGuide\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\ref\TourGuide.dll
 C:\Users\Besitzer\Desktop\FHTechnikum\Semester4\TourGuide\TourGuide\TourGuide\TourGuide\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\obj\Debug\net8.0-windows\TourGuide_Content.g.cs
+C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\bin\Debug\net8.0-windows\PuppeteerSharp.dll
