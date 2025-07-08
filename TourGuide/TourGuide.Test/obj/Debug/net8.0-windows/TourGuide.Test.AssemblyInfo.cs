@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TourGuide.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c3c8faa671148465ef0a7ca07677950b9184f63")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22a6f1d313cbd92bad6535bd916fcc55e2ca3b40")]
 [assembly: System.Reflection.AssemblyProductAttribute("TourGuide.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TourGuide.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

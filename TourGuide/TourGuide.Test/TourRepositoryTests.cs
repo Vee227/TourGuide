@@ -184,7 +184,7 @@ namespace TourGuide.Test
         {
             var fakeTour = new Tour
             {
-                Id = 999999, // Use a high int value unlikely to exist
+                Id = 999999, 
                 name = "NonExistent",
                 description = "This tour doesn't exist in DB",
                 startLocation = "Nowhere",
@@ -195,7 +195,7 @@ namespace TourGuide.Test
             };
 
             var exception = await Record.ExceptionAsync(() => _repository.UpdateTourAsync(fakeTour));
-            Assert.Null(exception); // Should not throw, maybe silently does nothing
+            Assert.Null(exception); 
         }
         
         [Fact]
@@ -203,13 +203,12 @@ namespace TourGuide.Test
         {
             var invalidId = 999999;
             var exception = await Record.ExceptionAsync(() => _repository.DeleteTourAsync(invalidId));
-            Assert.Null(exception); // Should silently do nothing or log
+            Assert.Null(exception); 
         }
         
         [Fact]
         public void FilterTours_ShouldReturnMatchingName()
         {
-            // Arrange
             var tours = new List<Tour>
             {
                 new Tour { name = "Vienna City Walk" },
@@ -219,10 +218,8 @@ namespace TourGuide.Test
 
             var repo = new SearchRepository();
 
-            // Act
             var result = repo.FilterTours(tours, "vienna");
 
-            // Assert
             Assert.Single(result);
             Assert.Contains(result, t => t.name == "Vienna City Walk");
         }
@@ -230,7 +227,7 @@ namespace TourGuide.Test
         [Fact]
         public void FilterTours_ShouldReturnEmptyList_WhenNoMatch()
         {
-            // Arrange
+          
             var tours = new List<Tour>
             {
                 new Tour { name = "Castle Tour" },
@@ -239,10 +236,8 @@ namespace TourGuide.Test
 
             var repo = new SearchRepository();
 
-            // Act
             var result = repo.FilterTours(tours, "spaceship");
 
-            // Assert
             Assert.Empty(result);
         }
 

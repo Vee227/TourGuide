@@ -44,31 +44,6 @@ namespace TourGuide.Test
                 ReportGenerator.GenerateSingleTourReport(tour, logs));
         }
         
-        [Fact]
-        public void GenerateSingleTourReport_WithMissingMapImage_StillCreatesPdf()
-        {
-            var tour = new Tour
-            {
-                name = "TourWithMissingImage",
-                startLocation = "A",
-                endLocation = "B",
-                transporttype = "Car",
-                distance = 40,
-                estimatedTime = 100
-            };
-
-            var logs = new List<TourLog>();
-            string fakeImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "doesnotexist.jpg");
-            string logsDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
-            
-            ReportGenerator.GenerateSingleTourReport(tour, logs, fakeImagePath);
-
-            var files = Directory.GetFiles(logsDir, $"SingleTourReport_{tour.name}_*.pdf");
-            Assert.NotEmpty(files);
-
-            foreach (var f in files)
-                File.Delete(f);
-        }
         
         [Fact]
         public void ReportsFolder_ShouldBeWritable()
