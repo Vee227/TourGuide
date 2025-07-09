@@ -218,7 +218,7 @@ namespace TourGuide.Test
                 new Tour { name = "Beach Tour" }
             };
 
-            var repo = new SearchRepository();
+            var repo = new SearchService();
 
             var result = repo.FilterTours(tours, "vienna");
 
@@ -236,7 +236,7 @@ namespace TourGuide.Test
                 new Tour { name = "City Walk" }
             };
 
-            var repo = new SearchRepository();
+            var repo = new SearchService();
 
             var result = repo.FilterTours(tours, "spaceship");
 

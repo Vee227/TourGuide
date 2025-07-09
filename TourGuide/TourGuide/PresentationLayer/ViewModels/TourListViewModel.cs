@@ -14,6 +14,7 @@ using TourGuide.DataLayer;
 using TourGuide.DataLayer.Repositories;
 using log4net;
 using TourGuide.Logs;
+using TourGuide.BusinessLayer;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
@@ -113,37 +114,32 @@ namespace TourGuide.PresentationLayer.ViewModels
             ModifySelectedTour();
         }
 
-        public async void LoadTours()
+        
+        private readonly ITourRepository _tourRepository = new TourRepository(new TourPlannerContextFactory().CreateDbContext(null));
+        public async Task LoadTours()
         {
-            try
-            {
-                var factory = new TourPlannerContextFactory();
-                using var context = factory.CreateDbContext(null);
-                var repository = new TourRepository(context);
+            var loadedTours = await _tourRepository.GetAllToursAsync();
 
-                var loadedTours = await repository.GetAllToursAsync();
-                
-                AllTours = loadedTours.ToList();
-                
-                Tours.Clear();
-                foreach (var tour in AllTours)
-                    Tours.Add(tour);
-                
-                TourCards.Clear();
-                foreach (var tour in Tours)
-                    TourCards.Add(CreateCardViewModel(tour));
+            var logRepo = new TourLogRepository(new TourPlannerContextFactory().CreateDbContext(null));
+            var allLogsGrouped = await logRepo.GetAllLogsGroupedByTourAsync();
 
-                OnPropertyChanged(nameof(Tours));
-                OnPropertyChanged(nameof(TourCards));
-                
-                LoggerHelper.Info($"Loaded {Tours.Count} tours from database.");
-            }
-            catch (Exception ex)
+            foreach (var tour in loadedTours)
             {
-                LoggerHelper.Error("Failed to load tours from database.", ex);
-                Console.WriteLine($"Failed to load tours: {ex.Message}");
+                if (allLogsGrouped.TryGetValue(tour.Id, out var logs))
+                    tour.TourLogs = logs;
+                else
+                    tour.TourLogs = new List<TourLog>();
             }
+
+            Tours.Clear();
+            foreach (var tour in loadedTours)
+                Tours.Add(tour);
+            
+            AllTours = loadedTours.ToList();
+
         }
+
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)

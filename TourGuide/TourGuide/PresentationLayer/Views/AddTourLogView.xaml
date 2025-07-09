@@ -37,7 +37,7 @@
             </StackPanel>
 
             <StackPanel Grid.Row="3" Margin="0,0,0,10">
-                <TextBlock Text="Difficulty (1-5):" FontWeight="SemiBold"/>
+                <TextBlock Text="Difficulty (1 (easy) - 5 (hard)):" FontWeight="SemiBold"/>
                 <ComboBox Height="35" Padding="5"
                           ItemsSource="{Binding DifficultyOptions}"
                           SelectedItem="{Binding Difficulty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -56,7 +56,7 @@
             </StackPanel>
 
             <StackPanel Grid.Row="6" Margin="0,0,0,10">
-                <TextBlock Text="Rating (1-5):" FontWeight="SemiBold"/>
+                <TextBlock Text="Rating (1 (bad) - 5 (good)):" FontWeight="SemiBold"/>
                 <ComboBox Height="35" Padding="5"
                           ItemsSource="{Binding RatingOptions}"
                           SelectedItem="{Binding Rating, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>

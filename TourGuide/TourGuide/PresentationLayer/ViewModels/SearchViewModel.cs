@@ -42,14 +42,22 @@ namespace TourGuide.PresentationLayer.ViewModels
         {
             try
             {
-                var repo = new SearchRepository();
+                if (string.IsNullOrWhiteSpace(SearchInput))
+                {
+                    _tourListViewModel.Tours.Clear();
+                    foreach (var tour in _tourListViewModel.AllTours)
+                        _tourListViewModel.Tours.Add(tour);
+
+                    LoggerHelper.Info("Search input empty → Resetting to full tour list.");
+                    return;
+                }
+
+                var repo = new SearchService();
                 var filtered = repo.FilterTours(_tourListViewModel.AllTours, SearchInput);
 
                 _tourListViewModel.Tours.Clear();
                 foreach (var tour in filtered)
-                {
                     _tourListViewModel.Tours.Add(tour);
-                }
 
                 LoggerHelper.Info($"Search triggered: \"{SearchInput}\" → {filtered.Count()} of {_tourListViewModel.AllTours.Count} tours matched.");
             }
@@ -58,6 +66,7 @@ namespace TourGuide.PresentationLayer.ViewModels
                 LoggerHelper.Error("Error while performing search.", ex);
             }
         }
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged(string propertyName) =>

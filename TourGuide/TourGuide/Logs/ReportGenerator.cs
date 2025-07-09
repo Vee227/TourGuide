@@ -148,6 +148,5 @@ namespace TourGuide.Logs
                 throw;
             }
         }
-
     }
 }

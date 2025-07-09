@@ -107,8 +107,5 @@ namespace TourGuide.PresentationLayer.ViewModels
                 MessageBox.Show("Error saving the tour: " + ex.Message);
             }
         }
-
-
     }
-
 }

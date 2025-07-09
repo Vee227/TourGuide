@@ -52,6 +52,7 @@ namespace TourGuide.PresentationLayer.ViewModels
                         TourLogViewModel.LoadTourLogs(_selectedTour.Id);
                     }
                     OnPropertyChanged(nameof(TourLogViewModel.TourLogs));
+                    OnPropertyChanged(nameof(MapImageFullPath));
                 }
             }
         }
@@ -213,7 +214,28 @@ namespace TourGuide.PresentationLayer.ViewModels
             foreach (var tour in top)
                 TopTours.Add(tour);
         }
+        
+        public string? MapImageFullPath
+        {
+            get
+            {
+                if (SelectedTour != null && !string.IsNullOrWhiteSpace(SelectedTour.mapImagePath))
+                {
+                    string baseDir = AppDomain.CurrentDomain.BaseDirectory!;
+                    string folder = Path.GetFullPath(Path.Combine(baseDir, @"..\..\..\"));
+                    string fullPath = Path.Combine(folder, SelectedTour.mapImagePath);
 
+                    if (File.Exists(fullPath))
+                    {
+                        return fullPath;
+                    }
+                }
+
+                return null;
+            }
+        }
+
+        
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {

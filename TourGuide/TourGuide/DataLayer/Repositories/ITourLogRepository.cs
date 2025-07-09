@@ -14,4 +14,5 @@ namespace TourGuide.DataLayer.Repositories
         Task DeleteTourLogAsync(int id);
         Task UpdateTourLogAsync(TourLog log);
     }
+    
 }

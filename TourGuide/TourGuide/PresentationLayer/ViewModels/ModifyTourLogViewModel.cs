@@ -65,7 +65,7 @@ namespace TourGuide.PresentationLayer.ViewModels
                 var repo = new TourLogRepository(context);
 
                 await repo.UpdateTourLogAsync(SelectedTourLog);
-                _tourLogViewModel.ModifyTourLog(); // UI-Refresh
+                _tourLogViewModel.ModifyTourLog();
                 CloseWindow?.Invoke();
             }
             catch (Exception ex)
