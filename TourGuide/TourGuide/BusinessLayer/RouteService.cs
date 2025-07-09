@@ -132,6 +132,8 @@ namespace TourGuide.BusinessLayer
                 string outputPath = Path.GetFullPath(Path.Combine(baseDir, @"..\..\..\Assets\Maps", outputFileName));
 
                 MessageBox.Show($"Try Screenshot with:\nHTML:\n{htmlPath}\nOUT:\n{outputPath}");
+                var fetcher = new BrowserFetcher();
+                var revisionInfo = await fetcher.DownloadAsync();
 
                 var launchOptions = new LaunchOptions
                 {

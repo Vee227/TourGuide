@@ -691,3 +691,4 @@ C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide.Test\bin\Debug\net8
 C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide.Test\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
 C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide.Test\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide.Test\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Besitzer\Desktop\FHTechnikum\Semester4\TourGuide\TourGuide\TourGuide\TourGuide.Test\bin\Debug\net8.0-windows\PuppeteerSharp.dll

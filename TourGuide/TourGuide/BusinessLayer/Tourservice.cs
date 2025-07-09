@@ -13,6 +13,9 @@ public class TourService
 
     public bool IsChildFriendly(Tour tour)
     {
+        if (tour.transporttype?.ToLower() == "car") 
+            return true;
+
         if (tour.TourLogs == null || !tour.TourLogs.Any())
             return false;
 

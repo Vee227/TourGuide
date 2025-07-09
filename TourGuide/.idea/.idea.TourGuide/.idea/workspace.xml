@@ -10,27 +10,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d230cb5d-8d5d-4c50-86d9-b20d9000717f" name="Changes" comment="">
+    <list default="true" id="d230cb5d-8d5d-4c50-86d9-b20d9000717f" name="Changes" comment="These Migrations and SearchService didnt want to push">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TourGuide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TourGuide/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide.Test/TourRepositoryTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/TourRepositoryTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/DataLayer/Repositories/ITourLogRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/DataLayer/Repositories/ITourLogRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/Logs/ReportGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/Logs/ReportGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/MainWindowViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/SearchViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/SearchViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/TourListViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/ViewModels/TourListViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/PresentationLayer/Views/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/PresentationLayer/Views/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/TourGuide.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/TourGuide.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.Test.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.exe" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/bin/Debug/net8.0-windows/TourGuide.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/TourGuide.Test.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/ref/TourGuide.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/ref/TourGuide.Test.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/refint/TourGuide.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide.Test/obj/Debug/net8.0-windows/refint/TourGuide.Test.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/BusinessLayer/RouteService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/BusinessLayer/RouteService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/BusinessLayer/Tourservice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/BusinessLayer/Tourservice.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.exe" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/bin/Debug/net8.0-windows/TourGuide.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/MainWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/AddTourLogView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/AddTourLogView.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/ModifyTourLogView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/PresentationLayer/Views/ModifyTourLogView.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.g.resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/TourGuide.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/obj/Debug/net8.0-windows/apphost.exe" afterDir="false" />
@@ -147,7 +151,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.TourGuide">
     <configuration name="TourGuide" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -185,7 +189,7 @@
       <workItem from="1751775629260" duration="20656000" />
       <workItem from="1752019477813" duration="1559000" />
       <workItem from="1752021087022" duration="11135000" />
-      <workItem from="1752085098457" duration="5127000" />
+      <workItem from="1752085098457" duration="6864000" />
     </task>
     <task id="LOCAL-00001" summary="switching to rider">
       <option name="closed" value="true" />
@@ -283,7 +287,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752032264439</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="MapImage is showing now and search for popularity and child-friendliness works too">
+      <option name="closed" value="true" />
+      <created>1752090900265</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752090900265</updated>
+    </task>
+    <task id="LOCAL-00014" summary="These Migrations and SearchService didnt want to push">
+      <option name="closed" value="true" />
+      <created>1752090979782</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1752090979782</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +345,8 @@
     <MESSAGE value="Unique Feature - leaderboard" />
     <MESSAGE value="git conflict resolving issues merge" />
     <MESSAGE value="Fixed API, fixed making screenshots, immproved UI, deleted distance and time from &quot;AddTour&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed API, fixed making screenshots, immproved UI, deleted distance and time from &quot;AddTour&quot;" />
+    <MESSAGE value="MapImage is showing now and search for popularity and child-friendliness works too" />
+    <MESSAGE value="These Migrations and SearchService didnt want to push" />
+    <option name="LAST_COMMIT_MESSAGE" value="These Migrations and SearchService didnt want to push" />
   </component>
 </project>
