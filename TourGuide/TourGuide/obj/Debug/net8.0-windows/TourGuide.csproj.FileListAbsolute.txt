@@ -980,3 +980,5 @@ C:\Users\Besitzer\Desktop\FHTechnikum\Semester4\TourGuide\TourGuide\TourGuide\To
 C:\Users\Besitzer\Desktop\FHTechnikum\Semester4\TourGuide\TourGuide\TourGuide\TourGuide\bin\Debug\net8.0-windows\log4net.dll
 C:\Users\Besitzer\Desktop\FHTechnikum\Semester4\TourGuide\TourGuide\TourGuide\TourGuide\bin\Debug\net8.0-windows\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\Besitzer\Desktop\FHTechnikum\Semester4\TourGuide\TourGuide\TourGuide\TourGuide\bin\Debug\net8.0-windows\PuppeteerSharp.dll
+C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\bin\Debug\net8.0-windows\PuppeteerExtraSharp.dll
+C:\Users\wikto\Semester4\SWEN2\TourGuide\TourGuide\TourGuide\bin\Debug\net8.0-windows\RestSharp.dll

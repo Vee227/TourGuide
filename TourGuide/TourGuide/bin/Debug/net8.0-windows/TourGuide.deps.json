@@ -15,6 +15,7 @@
           "Microsoft.Extensions.Configuration.Json": "9.0.6",
           "NUnit": "4.3.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+          "PuppeteerExtraSharp": "2.0.0",
           "PuppeteerSharp": "20.2.0",
           "itext7": "9.2.0",
           "itext7.bouncy-castle-adapter": "9.2.0",
@@ -1170,6 +1171,18 @@
           }
         }
       },
+      "PuppeteerExtraSharp/2.0.0": {
+        "dependencies": {
+          "PuppeteerSharp": "20.2.0",
+          "RestSharp": "108.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/PuppeteerExtraSharp.dll": {
+            "assemblyVersion": "1.3.1.0",
+            "fileVersion": "1.3.1.0"
+          }
+        }
+      },
       "PuppeteerSharp/20.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Logging": "9.0.6"
@@ -1178,6 +1191,14 @@
           "lib/net8.0/PuppeteerSharp.dll": {
             "assemblyVersion": "20.2.0.0",
             "fileVersion": "20.2.0.0"
+          }
+        }
+      },
+      "RestSharp/108.0.3": {
+        "runtime": {
+          "lib/net6.0/RestSharp.dll": {
+            "assemblyVersion": "108.0.3.0",
+            "fileVersion": "108.0.3.0"
           }
         }
       },
@@ -2211,12 +2232,26 @@
       "path": "nunit/4.3.2",
       "hashPath": "nunit.4.3.2.nupkg.sha512"
     },
+    "PuppeteerExtraSharp/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dNbWUR1TEUOsNe0Ai2z260p7GTE3wa7I29oQAYoZDUtEkw2xwORsynhMu7iUhGqz+Ck2QpsUPKWmLdPHW+iv4w==",
+      "path": "puppeteerextrasharp/2.0.0",
+      "hashPath": "puppeteerextrasharp.2.0.0.nupkg.sha512"
+    },
     "PuppeteerSharp/20.2.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-EJkbNCjEX6L77DmO5O5IDE1ZrX+PyVAZWPC1lKB8XpXwlYe1popt+1c8UzfspOX8XHLD9jPIZwAI/Hx5X93pVg==",
       "path": "puppeteersharp/20.2.0",
       "hashPath": "puppeteersharp.20.2.0.nupkg.sha512"
+    },
+    "RestSharp/108.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-phq1AkVhqVXHZxvWDV4fJEJKCR5OHNFUGx2Ix8o5EFShS6654oZhth4X2RWvaU/W7UexIswW0T+lTirxfLU2Ow==",
+      "path": "restsharp/108.0.3",
+      "hashPath": "restsharp.108.0.3.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
