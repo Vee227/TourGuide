@@ -12,7 +12,7 @@ using PuppeteerSharp;
 
 
 
-namespace TourGuide.DataLayer.Services
+namespace TourGuide.BusinessLayer
 {
     public class RouteResult
     {
@@ -35,10 +35,13 @@ namespace TourGuide.DataLayer.Services
             _apiKey = config["ORS:ApiKey"] ?? throw new Exception("API key missing in config");
             _http = new HttpClient();
         }
-
         public async Task<RouteResult?> GetRouteAsync(double startLat, double startLng, double endLat, double endLng, string moveType)
-        {
-            var url = $"https://api.openrouteservice.org/v2/directions/{moveType}?start={startLng},{startLat}&end={endLng},{endLat}";
+        { 
+
+            var url = $"https://api.openrouteservice.org/v2/directions/{moveType}" +
+                      $"?start={startLng.ToString(CultureInfo.InvariantCulture)},{startLat.ToString(CultureInfo.InvariantCulture)}" +
+                      $"&end={endLng.ToString(CultureInfo.InvariantCulture)},{endLat.ToString(CultureInfo.InvariantCulture)}";
+
 
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             request.Headers.TryAddWithoutValidation("Authorization", _apiKey);
@@ -46,8 +49,7 @@ namespace TourGuide.DataLayer.Services
             var response = await _http.SendAsync(request);
             
             var responseText = await response.Content.ReadAsStringAsync();
-
-
+            
             if (!response.IsSuccessStatusCode)
             {
                 string errContent = await response.Content.ReadAsStringAsync();
@@ -90,7 +92,7 @@ namespace TourGuide.DataLayer.Services
         
         public async Task SaveCoordinatesAsJsAsync(List<(double lat, double lng)> coordinates)
         { 
-            MessageBox.Show("Speichere Koordinaten in directions.js...");
+            MessageBox.Show("Save coordinates in directions.js...");
 
             try
             {
@@ -120,6 +122,7 @@ namespace TourGuide.DataLayer.Services
 
         }
         
+        
         public async Task SaveMapScreenshotAsync(string outputFileName)
         {
             try
@@ -127,23 +130,18 @@ namespace TourGuide.DataLayer.Services
                 string baseDir = AppDomain.CurrentDomain.BaseDirectory;
                 string htmlPath = Path.GetFullPath(Path.Combine(baseDir, @"..\..\..\Assets\map.html"));
                 string outputPath = Path.GetFullPath(Path.Combine(baseDir, @"..\..\..\Assets\Maps", outputFileName));
-                
-                MessageBox.Show($"Try Screenshot with:\nHTML:\n{htmlPath}\nOUT:\n{outputPath}");
 
-                var browserFetcher = new BrowserFetcher();
-                await browserFetcher.DownloadAsync();
-                
-                var executablePath = Path.Combine(baseDir, "chrome-headless-shell.exe");
+                MessageBox.Show($"Try Screenshot with:\nHTML:\n{htmlPath}\nOUT:\n{outputPath}");
 
                 var launchOptions = new LaunchOptions
                 {
                     Headless = true,
-                    ExecutablePath = executablePath,
-                    Args = new[] { "--no-sandbox" }
+                    Args = new[] { "--no-sandbox" } 
                 };
 
                 using var browser = await Puppeteer.LaunchAsync(launchOptions);
                 using var page = await browser.NewPageAsync();
+
                 await page.GoToAsync(new Uri(htmlPath).AbsoluteUri);
                 await Task.Delay(1500); 
 
@@ -156,6 +154,5 @@ namespace TourGuide.DataLayer.Services
                 MessageBox.Show($"Error saving Screenshot:\n{ex}");
             }
         }
-        
     }
 }

@@ -10,6 +10,7 @@ using TourGuide.DataLayer.Models;
 using System.Collections.ObjectModel;
 using TourGuide.Logs;
 using log4net;
+using TourGuide.BusinessLayer;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {

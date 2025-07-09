@@ -10,10 +10,6 @@ using System.ComponentModel;
 
 namespace TourGuide.PresentationLayer.ViewModels
 {
-    //Das Tourdetail hier ist einfach nur mal zum Anzeigen der Daten (sind editierbar) - die
-    //Logik zum modifyen ist in TourListViewModel (wir updaten ja indem wir die Felder
-    //editieren und dann auf den Modify Button klicken is vlt eh ein etwas komischer
-    //Weg aber es funktioniert und wir müssen zuerst das andere fertig bekommen
     public class TourDetailViewModel : INotifyPropertyChanged
     {
         public Tour SelectedTour { get; }

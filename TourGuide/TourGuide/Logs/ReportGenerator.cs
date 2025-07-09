@@ -17,15 +17,13 @@ namespace TourGuide.Logs
             try
             {
                 LoggerHelper.Info("Starting report generation...");
-
-                // Null check for tour
+                
                 if (tour == null)
                 {
                     LoggerHelper.Error("Tour is null. Cannot generate report.");
                     throw new ArgumentNullException(nameof(tour));
                 }
-
-                // Create Logs directory if missing
+                
                 string logsDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
                 if (!Directory.Exists(logsDir))
                 {
@@ -44,7 +42,7 @@ namespace TourGuide.Logs
 
                 PdfFont boldFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
 
-                document.Add(new Paragraph($"🗺️ Tour Report: {tour.name ?? "Unnamed"}")
+                document.Add(new Paragraph($"Tour Report: {tour.name ?? "Unnamed"}")
                     .SetFontSize(18)
                     .SetFont(boldFont)
                     .SetTextAlignment(TextAlignment.CENTER));
@@ -55,8 +53,8 @@ namespace TourGuide.Logs
 
                 document.Add(new Paragraph(
                     $"Transport: {tour.transporttype}\nDistance: {tour.distance} km\nEstimated Time: {tour.estimatedTime} mins"));
-
-                // Map image (optional)
+                
+                
                 if (!string.IsNullOrWhiteSpace(mapImagePath))
                 {
                     if (File.Exists(mapImagePath))
@@ -71,8 +69,7 @@ namespace TourGuide.Logs
                         LoggerHelper.Warn("Map image path provided but file not found: " + mapImagePath);
                     }
                 }
-
-                // Tour Logs
+                
                 document.Add(new Paragraph("\nTour Logs")
                     .SetFontSize(14)
                     .SetFont(boldFont));
@@ -82,7 +79,7 @@ namespace TourGuide.Logs
                     foreach (TourLog log in logs)
                     {
                         document.Add(new Paragraph(
-                            $"📅 {log.Date} | 🕓 {log.TotalTime}min | ⭐ {log.Rating}\n" +
+                            $"{log.Date} | {log.TotalTime}min | {log.Rating}\n" +
                             $"Comment: {log.Comment}\nDifficulty: {log.Difficulty}"
                         ).SetMarginBottom(10));
                     }
@@ -120,11 +117,11 @@ namespace TourGuide.Logs
                 Document document = new(pdf);
 
                 PdfFont boldFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
-                document.Add(new Paragraph("🗂️ Tour Summary Report").SetFontSize(18).SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER));
+                document.Add(new Paragraph("Tour Summary Report").SetFontSize(18).SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER));
 
                 foreach (var tour in tours)
                 {
-                    document.Add(new Paragraph($"\n📌 {tour.name ?? "Unnamed"}").SetFontSize(14).SetFont(boldFont));
+                    document.Add(new Paragraph($"\n {tour.name ?? "Unnamed"}").SetFontSize(14).SetFont(boldFont));
 
                     if (logsPerTour.TryGetValue(tour.Id, out var logs) && logs.Any())
                     {
@@ -132,9 +129,9 @@ namespace TourGuide.Logs
                         double avgRating = logs.Average(l => l.Rating);
                         double distance = tour.distance;
 
-                        document.Add(new Paragraph($"📏 Tour Distance: {distance} km"));
-                        document.Add(new Paragraph($"⏱️ Avg. Total Time (from logs): {avgTime:F1} min"));
-                        document.Add(new Paragraph($"⭐ Avg. Rating (from logs): {avgRating:F1}/5"));
+                        document.Add(new Paragraph($"Tour Distance: {distance} km"));
+                        document.Add(new Paragraph($"Avg. Total Time (from logs): {avgTime:F1} min"));
+                        document.Add(new Paragraph($"Avg. Rating (from logs): {avgRating:F1}/5"));
                     }
                     else
                     {

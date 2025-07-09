@@ -39,6 +39,7 @@
 
   <ItemGroup>
     <Folder Include="Assets\Maps\" />
+    <Folder Include="DataLayer\Services\" />
   </ItemGroup>
 
 </Project>

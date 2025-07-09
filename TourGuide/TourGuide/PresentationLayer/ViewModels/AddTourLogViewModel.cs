@@ -7,6 +7,7 @@ using TourGuide.PresentationLayer.Comands;
 using TourGuide.DataLayer;
 using TourGuide.DataLayer.Repositories;
 using System.Globalization;
+using TourGuide.BusinessLayer;
 using log4net;
 using TourGuide.Logs;
 
@@ -18,7 +19,9 @@ namespace TourGuide.PresentationLayer.ViewModels
         public string Comment { get; set; } = string.Empty;
         public int? Difficulty { get; set; }
         public int? TotalTime { get; set; }
+        public double? Distance { get; set; }
         public int? Rating { get; set; }
+        
 
         private readonly TourLogViewModel _tourLogViewModel;
         private readonly int _tourId;
@@ -65,6 +68,14 @@ namespace TourGuide.PresentationLayer.ViewModels
                 MessageBox.Show("Total time must be a positive number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+            
+            if (Distance is null or <= 0)
+            {
+                LoggerHelper.Warn("Invalid distance in AddTourLog.");
+                MessageBox.Show("Distance must be a positive number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
 
             if (Rating is null or < 1 or > 5)
             {
@@ -80,6 +91,7 @@ namespace TourGuide.PresentationLayer.ViewModels
                 Comment = Comment,
                 Difficulty = Difficulty.Value,
                 TotalTime = TotalTime.Value,
+                Distance = Distance.Value,
                 Rating = Rating.Value
             };
 

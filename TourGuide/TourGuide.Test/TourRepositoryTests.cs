@@ -7,6 +7,7 @@ using Xunit;
 using TourGuide.DataLayer;
 using TourGuide.DataLayer.Models;
 using TourGuide.DataLayer.Repositories;
+using TourGuide.BusinessLayer;
 
 namespace TourGuide.Test
 {
@@ -176,7 +177,8 @@ namespace TourGuide.Test
                 }
             };
 
-            Assert.Equal(3, tour.Popularity);
+            var service = new TourService();
+            Assert.Equal(3, service.CalculatePopularity(tour));
         }
         
         [Fact]

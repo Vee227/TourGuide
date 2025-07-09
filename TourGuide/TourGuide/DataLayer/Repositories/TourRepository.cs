@@ -70,23 +70,23 @@ namespace TourGuide.DataLayer.Repositories
             try
             {
                 await _context.Database.ExecuteSqlInterpolatedAsync($@"
-                    UPDATE ""Tours"" SET
-                        ""name"" = {tour.name},
-                        ""description"" = {tour.description},
-                        ""startLocation"" = {tour.startLocation},
-                        ""endLocation"" = {tour.endLocation},
-                        ""transporttype"" = {tour.transporttype},
-                        ""distance"" = {tour.distance},
-                        ""estimatedTime"" = {tour.estimatedTime}
-                    WHERE ""Id"" = {tour.Id};
-                ");
-                LoggerHelper.Info($"Tour '{tour.name}' (ID: {tour.Id}) updated.");
+            UPDATE ""Tours"" SET
+                ""name"" = {tour.name},
+                ""description"" = {tour.description},
+                ""startLocation"" = {tour.startLocation},
+                ""endLocation"" = {tour.endLocation},
+                ""transporttype"" = {tour.transporttype},
+                ""mapImagePath"" = {tour.mapImagePath}
+            WHERE ""Id"" = {tour.Id};
+            ");
+                LoggerHelper.Info($"Tour '{tour.name}' (ID: {tour.Id}) updated including mapImagePath.");
             }
             catch (Exception ex)
             {
                 LoggerHelper.Error($"Failed to update tour ID {tour.Id}.", ex);
             }
         }
+
 
 
         public async Task DeleteTourAsync(int id)

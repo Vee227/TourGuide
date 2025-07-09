@@ -45,12 +45,23 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0" Margin="10" VerticalAlignment="Stretch">
-                <Border Background="White" CornerRadius="8" Padding="10" BorderBrush="#BDC3C7" BorderThickness="1">
+                <Border Background="White"
+                        CornerRadius="8"
+                        Padding="5"
+                        BorderBrush="#BDC3C7"
+                        BorderThickness="1"
+                        Height="150"
+                        Margin="5">
+
                     <ListView ItemsSource="{Binding TourListViewModel.Tours}"
                               SelectedItem="{Binding SelectedTour, Mode=TwoWay}"
-                              VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-                              Padding="5" Margin="5"/>
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Padding="5"
+                              BorderThickness="0"/>
                 </Border>
+
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,20,10,0">
                     <Button Content="+" Width="40" Height="40" ToolTip="Add Tour"
@@ -71,7 +82,6 @@
                             Command="{Binding AddTourLogCommand}"/>
                 </StackPanel>
                 
-                <!-- REPORT BUTTONS: balanced layout -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,20,10,0">
                     <Button Content="📜 Report"
                             Width="90" Height="40"

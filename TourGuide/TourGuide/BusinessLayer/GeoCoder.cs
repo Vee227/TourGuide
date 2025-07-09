@@ -1,8 +1,10 @@
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Globalization;
 
-namespace TourGuide.DataLayer.Services
+namespace TourGuide.BusinessLayer
 {
     public static class GeoCoder
     {
@@ -34,9 +36,13 @@ namespace TourGuide.DataLayer.Services
             var json = await response.Content.ReadAsStringAsync();
             var doc = JsonDocument.Parse(json);
             var first = doc.RootElement[0];
+            
+            string latStr = first.GetProperty("lat").GetString();
+            string lngStr = first.GetProperty("lon").GetString();
+            
+            var lat = double.Parse(latStr, CultureInfo.InvariantCulture);
+            var lng = double.Parse(lngStr, CultureInfo.InvariantCulture);
 
-            var lat = double.Parse(first.GetProperty("lat").GetString());
-            var lng = double.Parse(first.GetProperty("lon").GetString());
 
             return (lat, lng);
         }

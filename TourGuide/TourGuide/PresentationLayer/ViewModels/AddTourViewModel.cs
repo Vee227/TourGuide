@@ -12,7 +12,7 @@ using TourGuide.DataLayer.Repositories;
 using TourGuide.DataLayer;
 using log4net;
 using TourGuide.Logs;
-using TourGuide.DataLayer.Services;
+using TourGuide.BusinessLayer;
 
 
 namespace TourGuide.PresentationLayer.ViewModels
@@ -64,8 +64,11 @@ namespace TourGuide.PresentationLayer.ViewModels
                 double startLng = await GeoCoder.GetLng(NewTour.startLocation);
                 double endLat = await GeoCoder.GetLat(NewTour.endLocation);
                 double endLng = await GeoCoder.GetLng(NewTour.endLocation);
+              
+                
 
                 var result = await routeService.GetRouteAsync(startLat, startLng, endLat, endLng, moveType);
+
                 if (result == null)
                 {
                     MessageBox.Show("Could not get route data.", "Error");

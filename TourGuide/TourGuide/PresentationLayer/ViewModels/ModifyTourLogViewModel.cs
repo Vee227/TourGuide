@@ -47,6 +47,11 @@ namespace TourGuide.PresentationLayer.ViewModels
                 MessageBox.Show("Total time must be a positive number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+            if (SelectedTourLog.Distance <= 0)
+            {
+                MessageBox.Show("Distance must be a positive number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             if (SelectedTourLog.Rating < 1 || SelectedTourLog.Rating > 5)
             {
                 MessageBox.Show("Please select a valid rating (1 (bad) -5 (good)).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
